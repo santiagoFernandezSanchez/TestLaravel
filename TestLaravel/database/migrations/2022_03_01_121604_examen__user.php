@@ -20,6 +20,9 @@ return new class extends Migration
             $table->integer('preguntas_acertadas')->nullable();
             $table->timestamps();
 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('examen_id')->references('id')->on('examens')->onDelete('cascade');
+
         });
     }
 

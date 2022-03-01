@@ -15,8 +15,15 @@ return new class extends Migration
     {
         Schema::create('materias', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            
             $table->string ('nombre');
+            $table->unsignedBigInteger('profesor_id');
+            $table->unsignedBigInteger('nivel_id');
+            $table->timestamps();
+
+
+            $table->foreign('profesor_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('nivel_id')->references('id')->on('nivels')->onDelete('cascade');
         });
     }
 

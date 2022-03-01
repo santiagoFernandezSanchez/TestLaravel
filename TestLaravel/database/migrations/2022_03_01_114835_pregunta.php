@@ -22,7 +22,10 @@ return new class extends Migration
             $table->string('respuesta3');
             $table->string('respuesta4');
             $table->string('correcta');
+            $table->unsignedBigInteger('tema_id');
             $table->timestamps();
+
+            $table->foreign('tema_id')->references('id')->on('temas')->onDelete('cascade');
         });
     }
 

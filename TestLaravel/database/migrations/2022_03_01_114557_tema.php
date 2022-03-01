@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('temas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('numero');
             $table->string('nombre');
+            $table->unsignedBigInteger('materia_id');
+            $table->timestamps();
+
+            $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade');
         });
     }
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -37,4 +39,30 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // public function login(Request $request){
+
+    //     $request->validate([
+    //         'email' => 'required',
+    //         'password' => 'required'
+    //     ],[
+    //         'email.required' => 'El campo email no puede estar vacío.',
+    //         'password.required' => 'El campo contraseña no puede estar vacío.'
+    //     ]);
+        
+    //     if( $user = User::where('rol', 'profesor') ){
+    //         return view('indexprofesor');
+    //     } 
+        
+    //     if( $user = User::where('rol', 'alumno') ){
+    //         return view('indexalumno');
+    //     } 
+        
+    //     if( $user = User::where('rol', 'admin') ){
+    //         return view('indexadmin');
+    //     }
+        
+    //     return view('login');
+        
+    // }
 }

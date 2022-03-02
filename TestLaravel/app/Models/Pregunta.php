@@ -17,4 +17,7 @@ class Pregunta extends Model {
         'correcta'
     ];
 
+    public function temas(){
+        return $this->belongsTo(Tema::class);
+    }
 }

@@ -13,10 +13,14 @@ class Tema extends Model {
     ];
 
     public function preguntas(){
-        return $this->hasMany(Pregunta::class, 'foreign_key');
+        return $this->hasMany(Pregunta::class);
     }
 
     public function examens(){
-        return $this->hasMany(Examen::class, 'foreign_key');
+        return $this->hasMany(Examen::class);
+    }
+
+    public function materias(){
+        return $this->belongsTo(Materia::class);
     }
 }

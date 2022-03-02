@@ -12,6 +12,6 @@ class Nivel extends Model {
     ];
 
     public function materias(){
-        return $this->hasMany(Materia::class, 'foreign_key');
+        return $this->hasMany(Materia::class);
     }
 }

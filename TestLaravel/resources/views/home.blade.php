@@ -16,6 +16,24 @@
 
                     {{ __('You are logged in!') }}
 
+                    @if ( (Auth::user()->rol) == 'profesor' )
+
+                    <p>Soy profesor</p>
+                        
+                    @endif
+
+                    @if ( Auth::user()->rol == 'alumno' )
+
+                    <p>Soy alumno</p>
+                        
+                    @endif
+
+                    @if ( Auth::user()->rol == 'admin' )
+
+                    <p>Soy admin</p>
+                        
+                    @endif
+
                 </div>
             </div>
         </div>

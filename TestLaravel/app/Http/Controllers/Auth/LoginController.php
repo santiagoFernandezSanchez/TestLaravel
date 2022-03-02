@@ -40,23 +40,23 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(Request $request)
-    {
-        if($user = User::where('rol', 'profesor')){
+    // public function login(Request $request)
+    // {
+    //     if($user = User::where('rol', 'profesor')){
 
-            return view('indexprofesor');
+    //         return view('indexprofesor');
 
-        }else if($user = User::where('rol', 'alumno')){
+    //     }else if($user = User::where('rol', 'alumno')){
 
-            return view('indexalumno');
+    //         return view('indexalumno');
 
-        }else if($user = User::where('rol', 'admin')){
+    //     }else if($user = User::where('rol', 'admin')){
 
-            return view('indexadmin');
+    //         return view('indexadmin');
 
-        }else{
+    //     }else{
 
-            return view('auth.login');
-        }
-    }
+    //         return view('auth.login');
+    //     }
+    // }
 }

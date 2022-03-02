@@ -11,4 +11,16 @@ class Materia extends Model {
         'nombre'
     ];
 
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function temas(){
+        return $this->hasMany(Tema::class);
+    }
+
+    public function nivels(){
+        return $this->belongsTo(Nivel::class);
+    }
+    
 }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('examen_id');
             $table->unsignedBigInteger('user_id');
             $table->integer('preguntas_acertadas')->nullable();
+            $table->dateTime('fecha_validacion');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

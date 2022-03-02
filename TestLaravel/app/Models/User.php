@@ -25,12 +25,14 @@ class User extends Authenticatable
     ];
 
     public function materias(){
-        return $this->hasMany(Materia::class, 'foreign_key');
+        return $this->hasOne( Materia::class );
     }
 
     public function examens(){
-        return $this->BelongsToMany( Examen::class );
+        return $this->belongsToMany( Examen::class );
     }
+
+
 
     /**
      * The attributes that should be hidden for serialization.

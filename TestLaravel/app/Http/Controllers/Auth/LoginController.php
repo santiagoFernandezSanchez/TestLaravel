@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,25 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+        if($user = User::where('rol', 'profesor')){
+
+            return view('indexprofesor');
+
+        }else if($user = User::where('rol', 'alumno')){
+
+            return view('indexalumno');
+
+        }else if($user = User::where('rol', 'admin')){
+
+            return view('indexadmin');
+
+        }else{
+
+            return view('auth.login');
+        }
     }
 }

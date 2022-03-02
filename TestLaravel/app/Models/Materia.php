@@ -11,4 +11,7 @@ class Materia extends Model {
         'nombre'
     ];
 
+    public function users(){
+        return $this->belognsTo(User::class);
+    }
 }

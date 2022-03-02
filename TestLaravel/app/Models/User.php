@@ -21,7 +21,16 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rol'
     ];
+
+    public function materias(){
+        return $this->hasMany(Materia::class, 'foreign_key');
+    }
+
+    public function examens(){
+        return $this->BelongsTooMany( Examen::class );
+    }
 
     /**
      * The attributes that should be hidden for serialization.

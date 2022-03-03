@@ -16,6 +16,8 @@
 
                     {{ __('You are logged in!') }}
 
+                    @if ( Auth::user()->rol == 'profesor' )
+
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
                             <a class="btn btn-outline-primary btn-lg" href="{{ route('tema.create') }}">Crear tema</a>
@@ -40,24 +42,24 @@
                         </div>
                     </div>
 
-                    <p>{{  Auth::user()->materias->id}}</p>
+
 
                     <p>Materia:{{ Auth::user()->materias->nombre }}</p>
-                    <p>Tema:{{ Auth::user()->materias->id }}</p>
+
                     <p>Nivel: {{ $nombre_nivel[0]->nombre }}</p>
-                        
+
                     @endif
 
                     @if ( Auth::user()->rol == 'alumno' )
 
                     <p>Soy alumno</p>
-                        
+
                     @endif
 
                     @if ( Auth::user()->rol == 'admin' )
 
                     <p>Soy admin</p>
-                        
+
                     @endif
 
                 </div>

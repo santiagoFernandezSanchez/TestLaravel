@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pregunta extends Model {
 
-    protected $fillable = [ 
-        'nivel', 
+    protected $fillable = [  
+        'tema_id',
+        'nivel',
         'enunciado',
         'respuesta1',
         'respuesta2',

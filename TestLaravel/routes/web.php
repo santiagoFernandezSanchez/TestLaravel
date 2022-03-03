@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TemaController;
+use App\Http\Controllers\PreguntaController;
 
 
 /*
@@ -34,6 +35,7 @@ Route::post('/home/profesor/tema', [TemaController::class,'store'])->name('tema.
 
 Route::view('/home/profesor/examen', 'profesor.examen')->name('examen');
 
-Route::view('/home/profesor/pregunta', 'profesor.pregunta')->name('pregunta');
+Route::get('/home/profesor/pregunta', [PreguntaController::class, 'index'])->name('pregunta');
+Route::post('/home/profesor/pregunta', [PreguntaController::class, 'store'])->name('pregunta.store');
 
 Route::view('/home/profesor/alumno', 'profesor.alumno')->name('alumno');

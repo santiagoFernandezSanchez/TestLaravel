@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Has iniciado sesión como ') }} {{ Auth::user()->rol }}</div>
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,44 +14,27 @@
                         </div>
                     @endif
 
+                    {{ __('You are logged in!') }}
+
                     @if ( (Auth::user()->rol) == 'profesor' )
 
-                    <div class="row mt-4">
-                        <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('tema') }}">Crear tema</a>
-                        </div>
-                    </div>
-                    
-                    <div class="row mt-4">
-                        <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('examen') }}">Crear examen</a>
-                        </div>
-                    </div>
+                    <p>Soy profesor</p>
 
-                    <div class="row mt-4">
-                        <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('pregunta') }}">Crear pregunta</a>
-                        </div>
-                    </div>
-
-                    <div class="row mt-4 mb-4">
-                        <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('alumno') }}">Añadir alumno</a>
-                        </div>
-                    </div>   
-
+                    <p>Materia:{{ Auth::user()->materias->nombre }}</p>
+                    <p>Tema:{{ Auth::user()->materias->id }}</p>
+                    <p>Nivel: {{ $nombre_nivel[0]->nombre }}</p>
+                        
                     @endif
-
 
                     @if ( Auth::user()->rol == 'alumno' )
 
-                        <p>Soy alumno</p>
+                    <p>Soy alumno</p>
                         
                     @endif
 
                     @if ( Auth::user()->rol == 'admin' )
 
-                        <p>Soy admin</p>
+                    <p>Soy admin</p>
                         
                     @endif
 

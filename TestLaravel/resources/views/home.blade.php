@@ -19,6 +19,10 @@
                     @if ( (Auth::user()->rol) == 'profesor' )
 
                     <p>Soy profesor</p>
+
+                    <p>{{ Auth::user()->materias->nombre }}</p>
+                    <p> Materia: {{ $variable = Auth::user()->materias->nivels }}</p>
+                    <p>Nombre tema: {{ $variable }}</p>
                         
                     @endif
 

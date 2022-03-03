@@ -18,10 +18,10 @@
 
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('tema') }}">Crear tema</a>
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('tema.create') }}">Crear tema</a>
                         </div>
                     </div>
-                    
+
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
                             <a class="btn btn-outline-primary btn-lg" href="{{ route('examen') }}">Crear examen</a>
@@ -38,7 +38,7 @@
                         <div class="col d-flex justify-content-center">
                             <a class="btn btn-outline-primary btn-lg" href="{{ route('alumno') }}">Añadir alumno</a>
                         </div>
-                    </div>   
+                    </div>
 
                     @endif
 
@@ -46,13 +46,13 @@
                     @if ( Auth::user()->rol == 'alumno' )
 
                         <p>Soy alumno</p>
-                        
+
                     @endif
 
                     @if ( Auth::user()->rol == 'admin' )
 
                         <p>Soy admin</p>
-                        
+
                     @endif
 
                 </div>

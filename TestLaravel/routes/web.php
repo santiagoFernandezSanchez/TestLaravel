@@ -23,5 +23,10 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::view('/home/pregunta', 'profesor.pregunta');
+Route::view('/home/profesor/tema', 'profesor.tema')->name('tema');
 
+Route::view('/home/profesor/examen', 'profesor.examen')->name('examen');
+
+Route::view('/home/profesor/pregunta', 'profesor.pregunta')->name('pregunta');
+
+Route::view('/home/profesor/alumno', 'profesor.alumno')->name('alumno');

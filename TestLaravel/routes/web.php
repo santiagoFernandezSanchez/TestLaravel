@@ -29,4 +29,6 @@ Route::view('/home/profesor/examen', 'profesor.examen')->name('examen');
 
 Route::view('/home/profesor/pregunta', 'profesor.pregunta')->name('pregunta');
 
+// Route::post('/', [PreguntaController::class, 'metodo']);
+
 Route::view('/home/profesor/alumno', 'profesor.alumno')->name('alumno');

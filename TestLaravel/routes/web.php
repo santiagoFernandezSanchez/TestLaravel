@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::view('/home/pregunta', 'profesor.pregunta');
+
+Route::get('/home/profesor/tema', [TemaController::class, 'create'])->name('crearTema');

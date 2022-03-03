@@ -12,10 +12,6 @@ class TemaController extends Controller
 {
     //
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function create() {
 
@@ -31,17 +27,12 @@ class TemaController extends Controller
 
             'numero' => $request->get('numero'),
             'nombre' => $request->get('nombre'),
-            'materia_id' => Auth::user()->materias->id
+            'materia_id' => auth()->user()->materias->id
         ]);
 
         $tema->save();
         return redirect('/home')->with('tema_creado','tema creado');
     }
 
-    // public function index(){
 
-    //     $temas = [];
-    //     $temas = Auth::user()->materias->temas;
-    //     return view('profesor.tema',compact('temas'));
-    // }
 }

@@ -40,6 +40,8 @@
                         </div>
                     </div>
 
+                    <p>{{  Auth::user()->materias->id}}</p>
+
                     @endif
 
 

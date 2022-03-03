@@ -9,6 +9,8 @@
 
 <p>Tema {{ $tema->numero }}: {{ $tema->nombre }} </p>
 
+@endforeach
+
 
 
 <form action="{{route('tema.store')}}" method="post">
@@ -23,12 +25,12 @@
         <input type="text" name="nombre" id="nombre" class="form-control" value="{{old('nombre')}}">
     </div>
 
-    <input type="hidden" name="materia_id" id="materia_id" value="{{ Auth::user()->materias->id }}">
+
 
 
 
     <button type="submit" class="btn btn-primary">Añadir tema</button>
 </form>
 
-@endforeach
+
 @endsection

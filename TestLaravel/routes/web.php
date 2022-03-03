@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TemaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,12 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::view('/home/profesor/tema', 'profesor.tema')->name('tema');
+Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->name('tema.create');
+
+
+Route::get('/home/profesor/tema', [TemaController::class, 'store'])->name('tema.store');
+Route::post('/home/profesor/tema', [TemaController::class,'store'])->name('tema.store');
+
 
 Route::view('/home/profesor/examen', 'profesor.examen')->name('examen');
 

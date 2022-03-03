@@ -16,9 +16,31 @@
 
                     {{ __('You are logged in!') }}
 
-                    @if ( (Auth::user()->rol) == 'profesor' )
+                    <div class="row mt-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('tema.create') }}">Crear tema</a>
+                        </div>
+                    </div>
 
-                    <p>Soy profesor</p>
+                    <div class="row mt-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('examen') }}">Crear examen</a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('pregunta') }}">Crear pregunta</a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('alumno') }}">Añadir alumno</a>
+                        </div>
+                    </div>
+
+                    <p>{{  Auth::user()->materias->id}}</p>
 
                     <p>Materia:{{ Auth::user()->materias->nombre }}</p>
                     <p>Tema:{{ Auth::user()->materias->id }}</p>

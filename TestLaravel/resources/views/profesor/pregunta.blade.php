@@ -1,82 +1,151 @@
-
-
 @extends('layouts.app')
 @section('content')
 
-<div class="row">
+<div class="container">
 
-    <div class="col-md-offset-3 col-md-6">
+    <form method="post" action="">
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title text-center">
-                    <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                   Crear pregunta
-                </h3>
-            </div>
+    <!-- TEMA -->
 
-            <div class="panel-body text-center">
-
-                <form action="#" method="post" enctype="multipart/form-data">
-                    @csrf
-
-                    <div class="form-floating">
-                        <label for="enunciado">Enunciado</label>
-                        <textarea name="enunciado" id="enunciado"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                       
-                        <input type="radio" name="respuestacorrecta" id="respuesta1">
-                        <label for="respuesta1">
-                            Respuesta 1:
-                            <input type="text" name="respuestaO1" id="respuestaO1">
-                        </label>
-
-                    </div>
-
-                    <div class="form-group">
-                       
-                        <input type="radio" name="respuestacorrecta" id="respuesta2">
-                        <label for="respuesta2">
-                            Respuesta 2:
-                            <input type="text" name="respuestaO2" id="respuestaO2">
-                        </label>
-
-                    </div>
-
-                    <div class="form-group">
-                       
-                        <input type="radio" name="respuestacorrecta" id="respuesta3">
-                        <label for="respuesta3">
-                            Respuesta 3:
-                            <input type="text" name="respuestaO3" id="respuestaO3">
-                        </label>
-
-                    </div>
-
-                    <div class="form-group">
-                       
-                        <input type="radio" name="respuestacorrecta" id="respuesta4">
-                        <label for="respuesta4">
-                            Respuesta 4:
-                            <input type="text" name="respuestaO4" id="respuestaO4">
-                        </label>
-
-                    </div>
-
-                    
-
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">
-                            Añadir película
-                        </button>
-                    </div>
-
-                </form>
-
+        <!-- TÍTULO -->
+        <div class="row mt-4">
+            <div class="col d-flex justify-content-center">
+                <h3>Tema</h3>
             </div>
         </div>
-    </div>
+
+        <!-- SELECT -->
+        <div class="row mt-4">
+            <div class="col-3"></div>
+            <div class="col">
+
+                <select class="form-select" aria-label="Default select example">
+
+                    <option selected>Seleccione un tema</option>
+
+                    {{ $temas = Auth::user()->materias->temas }}
+
+                    @foreach ( $temas as $tema )
+
+                        <option value="{{ $tema->nombre }}"> Tema {{ $tema->numero }}: {{ $tema->nombre }} </option>
+
+                    @endforeach
+
+                </select>
+
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+
+        <!-- PREGUNTA -->
+
+        <!-- TÍTULO -->
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+                <h3>Pregunta</h3>
+            </div>
+        </div>
+
+        <!-- INPUT PREGUNTA -->
+        <div class="row mt-4">
+            <div class="col-3"></div>
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">Pregunta</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+
+
+        <!-- RESPUESTAS INCORRECTAS -->
+
+        <!-- TÍTULO -->
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+                <h3>Respuestas incorrectas</h3>
+            </div>
+        </div>
+
+        <!-- RESPUESTA 1 -->
+        <div class="row mt-4">
+            <div class="col-3"></div>
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">Respuesta 1</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+
+        <!-- RESPUESTA 2 -->
+        <div class="row mt-4">
+            <div class="col-3"></div>
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">Respuesta 2</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+
+        <!-- RESPUESTA 3 -->
+        <div class="row mt-4">
+            <div class="col-3"></div>
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">Respuesta 3</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+
+        <!-- RESPUESTA CORRECTA -->
+
+        <!-- TÍTULO -->
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+                <h3>Respuesta correcta</h3>
+            </div>
+        </div>
+
+        <!-- RESPUESTA CORRECTA -->
+        <div class="row mt-4">
+            <div class="col-3"></div>
+            <div class="col">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">Respuesta Correcta</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary btn-lg">Crear pregunta</button>
+            </div>
+        </div>
+
+    </form>
 </div>
 @endsection

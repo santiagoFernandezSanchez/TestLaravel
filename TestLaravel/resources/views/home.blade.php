@@ -20,9 +20,14 @@
 
                     <p>Soy profesor</p>
 
-                    <p>{{ Auth::user()->materias->nombre }}</p>
-                    <p> Materia: {{ $variable = Auth::user()->materias->nivels }}</p>
-                    <p>Nombre tema: {{ $variable }}</p>
+                    
+                    <p> Materia: {{  Auth::user()->materias->nombre}}</p>
+                    <p> Tema: {{ Auth::user()->materias->temas->first()->nombre }}</p>
+                    <p>Nivel: {{ Auth::user()->materias->first()->nivels }}</p>
+                    <button>Crear tema</button>
+                    <button>Crear examen</button>
+                    <button>Crear pregunta</button>
+                    <button>Añadir alumno</button>
                         
                     @endif
 

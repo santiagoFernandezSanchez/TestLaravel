@@ -38,6 +38,5 @@ class HomeController extends Controller
          ->get();
 
          return view('home', compact('nombre_nivel', 'nombre_materia'));
-
      }
 }

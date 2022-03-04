@@ -22,11 +22,12 @@ class TemaController extends Controller
 
         $materiadeusuario = $materia[0];
 
+        $temas = DB::table('materias')
+        ->join('temas', 'temas.materia_id', 'materias.id')
+        ->select('*')
+        ->get();
 
-
-
-
-        return view('profesor.tema',compact('materia'));
+        return view('profesor.tema', compact('materia', 'temas'));
     }
 
 

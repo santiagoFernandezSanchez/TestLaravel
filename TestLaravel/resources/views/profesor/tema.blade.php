@@ -8,6 +8,13 @@
     <div class="row mt-5">
         <div class="col-3"></div>
         <div class="col">
+
+            @if(session('tema_creado'))
+
+                <p class="alert alert-success">{{ session('tema_creado') }}</p>
+
+            @endif
+
             <h1>Lista de temas</h1>
         </div>
         <div class="col-3"></div>

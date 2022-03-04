@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pregunta;
+use DB;
 
 class PreguntaController extends Controller
 {
     public function index(){
 
-        $temas = auth()->user()->materias->temas;
+        $temas = DB::table('materias')
+        ->join('temas', 'temas.materia_id', 'materias.id')
+        ->select('*')
+        ->where('id', auth()->user()->materia_id)
+        ->get();
 
         return view('profesor.pregunta', compact('temas'));
     }

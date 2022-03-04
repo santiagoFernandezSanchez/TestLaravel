@@ -40,11 +40,9 @@
                         </div>
                     </div>
 
+                    <p>Materia:  {{ $nombre_materia[0]->nombre }}</p>
 
-
-                    <p>Materia: {{  }}</p>
-
-                    <p>Nivel: {{ Auth::user()->materias }}</p>
+                    <p>Nivel: {{ $nombre_nivel[0]->nombre }}</p>
 
                     @endif
 

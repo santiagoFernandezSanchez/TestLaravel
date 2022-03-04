@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header"><h4>Menú {{ Auth::user()->rol }} </h4></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
 
                     @if ( Auth::user()->rol == 'profesor' )
 
@@ -42,7 +40,7 @@
                         </div>
                     </div>
 
-                    <p>Materia:{{ Auth::user()->materias->nombre }}</p>
+                    <p>Materia: {{ Auth::user()->materias->nombre }}</p>
 
                     <p>Nivel: {{ $nombre_nivel[0]->nombre }}</p>
 

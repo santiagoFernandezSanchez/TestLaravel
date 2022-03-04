@@ -38,6 +38,8 @@ class AlumnoController extends Controller
 
         return view('profesor.alumno');
 
+        return redirect('/home/profesor/alumno')->with('exito', 'Usuario añadido con éxito');
+
     }
 
 

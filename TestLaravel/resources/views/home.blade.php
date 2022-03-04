@@ -75,12 +75,17 @@
                                 <tbody>
 
                                     <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
+
+
                                     <tr>
                                         <td scope="row">(Nombre Asignatura)</td>
                                         <td>(Tema)</td>
                                         <td>(Nota)</td>
                                         <td>(Fecha)</td>
                                     </tr>
+
+
+
 
                                 </tbody>
                             </table>

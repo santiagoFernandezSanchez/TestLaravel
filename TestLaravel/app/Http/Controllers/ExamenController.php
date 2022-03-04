@@ -10,9 +10,15 @@ class ExamenController extends Controller
 
     public function show() {
 
-    $examenes = auth()->user()->materias->temas->first()->examens;
 
-    return view('profesor.examen',compact('examenes'));
+
+        $temas = DB::table('materias')
+        ->join('temas', 'temas.materia_id', 'materias.id')
+        ->select('*')
+        ->where('temas.materia_id', auth()->user()->materia_id)
+        ->get();
+
+        return view('profesor.examen', compact('temas'));
 
 
     }

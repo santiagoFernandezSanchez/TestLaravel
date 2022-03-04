@@ -5,6 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TemaController;
 use App\Http\Controllers\PreguntaController;
+use App\Http\Controllers\ExamenController;
+
+
 
 
 /*
@@ -30,7 +33,9 @@ Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->nam
 //Route::get('/home/profesor/tema', [TemaController::class, 'store'])->name('tema.store');
 Route::post('/home/profesor/tema', [TemaController::class,'store'])->name('tema.store');
 
-Route::view('/home/profesor/examen', 'profesor.examen')->name('examen');
+
+Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('examen');
+
 
 Route::get('/home/profesor/pregunta', [PreguntaController::class, 'index'])->name('pregunta');
 

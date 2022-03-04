@@ -9,7 +9,7 @@ class Materia extends Model {
 
     protected $fillable = [
         'nombre',
-        'user_id',
+
         'nivel_id'
     ];
 
@@ -28,5 +28,5 @@ class Materia extends Model {
     public function user_alumno(){
         return $this->hasMany(User::class);
     }
-    
+
 }

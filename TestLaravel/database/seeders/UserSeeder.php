@@ -18,6 +18,9 @@ class UserSeeder extends Seeder
     {
         //
 
+
+// PROFESORES ///
+
         DB::table('users')->insert([
             'name'=>'1ºESO:Biologia y Geologia',
             'email'=>'1eso.biologia.geologia@gmail.com',
@@ -91,11 +94,37 @@ class UserSeeder extends Seeder
             'rol'=>'profesor',
             'materia_id'=>10
         ]);
+
+// ADMIN ///
         DB::table('users')->insert([
             'name'=>'admim',
             'email'=>'admin@gmail.com',
             'password'=>bcrypt('admin'),
             'rol'=>'admin'
+        ]);
+
+
+// ALUMNOS ///
+
+        DB::table('users')->insert([
+            'name'=>'alumno1',
+            'email'=>'alumno1@gmail.com',
+            'password'=>bcrypt('alumno1'),
+            'rol'=>'alumno'
+        ]);
+
+        DB::table('users')->insert([
+            'name'=>'alumno2',
+            'email'=>'alumno2@gmail.com',
+            'password'=>bcrypt('alumno2'),
+            'rol'=>'alumno'
+        ]);
+
+        DB::table('users')->insert([
+            'name'=>'alumno3',
+            'email'=>'alumno3@gmail.com',
+            'password'=>bcrypt('alumno3'),
+            'rol'=>'alumno'
         ]);
 
     }

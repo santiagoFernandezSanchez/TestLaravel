@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class AlumnoController extends Controller
 {
-    
+
 
     public function inscrito(){
 
@@ -34,11 +34,11 @@ class AlumnoController extends Controller
         DB::table('users')
         ->select('*')
         ->where('id', $request->id)
-        ->update(['materia_id' => Auth()->id()]);
+        ->update(['materia_id' => $request->get('materia_id')]);
 
-        return view('profesor.alumno'); 
-    
+        return view('profesor.alumno');
+
     }
 
-    
+
 }

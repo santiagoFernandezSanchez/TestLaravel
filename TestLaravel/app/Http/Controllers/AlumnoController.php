@@ -28,4 +28,17 @@ class AlumnoController extends Controller
         return view('profesor.alumno', compact('listado', 'listado2'));
 
     }
+
+    public function update(Request $request){
+
+        DB::table('users')
+        ->select('*')
+        ->where('id', $request->id)
+        ->update(['materia_id' => Auth()->id()]);
+
+        return view('profesor.alumno'); 
+    
+    }
+
+    
 }

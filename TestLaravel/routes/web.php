@@ -42,4 +42,6 @@ Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('ex
 
 Route::post('/home/profesor/examen', [ExamenController::class, 'store'])->name('examen.store');
 
-Route::view('/home/profesor/alumno', [AlumnoController::class, 'inscrito'])->name('alumno');
+Route::get('/home/profesor/alumno', [AlumnoController::class, 'inscrito'])->name('alumno');
+
+Route::post('/home/profesor/alumno', [AlumnoController::class, 'update'])->name('alumno.update');

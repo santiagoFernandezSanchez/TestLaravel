@@ -60,13 +60,13 @@
 
                     <!-- MÉTODO PARA NO INTRODUCIR UN TEMA REPETIDO -->
 
-                    <!-- <select>
+                    {{-- <!-- <select>
                         @for($i = $tema->last()->numero, $i < 30; $i++; );
                         <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
-                    </select> -->
+                    </select> --> --}}
 
-                    
+
 
                 </div>
 

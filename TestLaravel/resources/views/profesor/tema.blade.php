@@ -28,7 +28,7 @@
 
                     @foreach ($temas as $tema)
                     <tr>
-                        <th scope="row">{{$tema->numero}}</th>
+                        <td scope="row">{{$tema->numero}}</td>
                         <td>{{$tema->nombre}}</td>
                     </tr>
                     @endforeach

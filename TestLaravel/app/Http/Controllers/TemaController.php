@@ -15,19 +15,13 @@ class TemaController extends Controller
 
     public function create() {
 
-        $materia = DB::table('materias')
-        ->select('*')
-        ->where('id', auth()->id())
-        ->get();
-
-        $materiadeusuario = $materia[0];
-
         $temas = DB::table('materias')
-        ->join('temas', 'temas.materia_id', $materiadeusuario->id)
-        ->select('temas')
+        ->join('temas', 'temas.materia_id', 'materias.id')
+        ->select('*')
+        ->where('temas.materia_id', auth()->user()->materia_id)
         ->get();
 
-        return view('profesor.tema', compact( 'temas'));
+        return view('profesor.tema', compact('temas'));
     }
 
 

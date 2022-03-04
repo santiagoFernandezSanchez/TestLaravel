@@ -37,7 +37,7 @@ Route::get('/home/profesor/pregunta', [PreguntaController::class, 'index'])->nam
 
 Route::post('/home/profesor/pregunta', [PreguntaController::class, 'store'])->name('pregunta.store');
 
-Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('crear_examen');
+Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('examen');
 
 Route::post('/home/profesor/examen', [ExamenController::class, 'store'])->name('examen.store');
 

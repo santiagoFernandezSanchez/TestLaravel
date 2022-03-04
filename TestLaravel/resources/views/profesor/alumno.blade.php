@@ -7,6 +7,12 @@
         <div class="col d-flex justify-content-center">
             <h1>Alumnos inscritos en esta asignatura</h1>
         </div>
+
+        @if(session('exito'))
+
+                <p class="alert alert-success">{{session('exito')}}</p>
+
+            @endif
     </div>
 
     <div class="row mt-3">
@@ -78,12 +84,6 @@
             </form>
         </div>
         <div class="col-3">
-
-            @if(session('exito'))
-
-                <p class="alert alert-success">session('exito')</p>
-
-            @endif
 
         </div>
     </div>

@@ -5,7 +5,7 @@
 
     @if(session('Exito'))
 
-        <span class="alert alert-success">{{session('Exito')}}</span>
+        <p class="alert alert-success">{{session('Exito')}}</p>
 
     @endif
     <form method="post" action="{{ route('pregunta.store') }}">

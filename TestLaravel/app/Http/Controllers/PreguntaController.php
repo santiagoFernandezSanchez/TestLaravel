@@ -14,7 +14,7 @@ class PreguntaController extends Controller
         $temas = DB::table('materias')
         ->join('temas', 'temas.materia_id', 'materias.id')
         ->select('*')
-        ->where('id', auth()->user()->materia_id)
+        ->where('temas.materia_id', auth()->user()->materia_id)
         ->get();
 
         return view('profesor.pregunta', compact('temas'));

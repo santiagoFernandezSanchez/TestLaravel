@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class AlumnoController extends Controller
 {
-    
+
 
     public function inscrito(){
 
@@ -36,9 +36,14 @@ class AlumnoController extends Controller
         ->where('id', $request->id)
         ->update(['materia_id' => Auth()->id()]);
 
-        return redirect('/home/profesor/alumno')->with('exito', 'Usuario añadido con éxito'); 
-    
+        return redirect('/home/profesor/alumno')->with('exito', 'Usuario añadido con éxito');
+
     }
 
-    
+    public function mostrarNota () {
+
+
+    }
+
+
 }

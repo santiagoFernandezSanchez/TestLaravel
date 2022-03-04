@@ -41,4 +41,6 @@ class ExamenController extends Controller
         return redirect('/home/profesor/examen')->with('examen_creado', 'Examen creado con exito');
     }
 
+
+
 }

@@ -23,7 +23,7 @@
 
                     @foreach ($listado as $inscrito)
                     <tr>
-                        <th scope="row">{{$inscrito->id}}</th>
+                        <td scope="row">{{$inscrito->id}}</td>
                         <td>{{$inscrito->name}}</td>
                     </tr>
                     @endforeach
@@ -47,7 +47,7 @@
 
         <div class="col">
 
-            <form action="{{route('alumno.update')}}" method="post">
+            <form action="{{ route('alumno.update') }}" method="post">
                 @csrf
                 <table class="table table-sm table-hover">
                     <thead>
@@ -61,9 +61,9 @@
 
                         @foreach ($listado2 as $noInscrito)
                         <tr>
-                            <th scope="row">{{$noInscrito->id}}</th>
+                            <td scope="row">{{$noInscrito->id}}</td>
                             <td>{{$noInscrito->name}}</td>
-                            <td><input type="checkbox" value="{{$noInscrito->id}}"></td>
+                            <td><input type="checkbox" value="{{ $noInscrito->id }}" name = "id"></td>
                         </tr>
 
                         @endforeach
@@ -75,7 +75,15 @@
 
             </form>
         </div>
-        <div class="col-3"></div>
+        <div class="col-3">
+
+            @if(session('exito'))
+
+                <p class="alert alert-success">session('exito')</p>
+
+            @endif
+
+        </div>
     </div>
 
 

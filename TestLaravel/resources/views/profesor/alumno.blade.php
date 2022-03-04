@@ -7,12 +7,16 @@
         <div class="col d-flex justify-content-center">
             <h1>Alumnos inscritos en esta asignatura</h1>
         </div>
+    </div>
 
-        @if(session('exito'))
-
-                <p class="alert alert-success">{{session('exito')}}</p>
-
+    <div class="row mt-3">
+        <div class="col-3"></div>
+        <div class="col">
+            @if(session('exito'))
+            <p class="alert alert-success">{{session('exito')}}</p>
             @endif
+        </div>
+        <div class="col-3"></div>
     </div>
 
     <div class="row mt-3">
@@ -69,13 +73,15 @@
                         <tr>
                             <td scope="row">{{$noInscrito->id}}</td>
                             <td>{{$noInscrito->name}}</td>
-                            <td><input type="checkbox" value="{{ $noInscrito->id }}" name = "id"></td>
+                            <td><input type="checkbox" value="{{ $noInscrito->id }}" name="id"></td>
                         </tr>
 
                         @endforeach
                     </tbody>
 
                 </table>
+
+
 
                 <button type="submit" class="btn btn-primary mt-4">Añadir alumno</button>
 

@@ -12,22 +12,19 @@
 
         <div class="col-3"></div>
         <div class="col">
-            <h3>Seleccione un nivel: </h3>
+            <h3>Seleccione la dificultad:</h3>
             <form action="" method="post">
                 @csrf
                 <div class="input-group">
-                    <div>
-                            <label for="facil"><h5>Fácil</h5></label>
-                            <input id="facil" type="radio">
-                        
-                      
-                            <label for="medio"><h5>Medio</h5></label>
-                            <input id="medio" type="radio">
                     
-                            <label for="dificil"><h5>Difícil</h5></label>
-                            <input id="dificil" type="radio">
+                    <select class = "form-control">
 
-                    </div>
+                        <option value ="" selected>Selecciona una dificultad</option>
+                        <option value ="">Básico</option>
+                        <option value ="">Intermedio</option>
+                        <option value ="">Avanzado</option>
+
+                    </select>
                 </div>
 
                 <div class="form-group mt-4">

@@ -30,15 +30,13 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->name('tema.create');
-//Route::get('/home/profesor/tema', [TemaController::class, 'store'])->name('tema.store');
+
 Route::post('/home/profesor/tema', [TemaController::class,'store'])->name('tema.store');
-
-
-Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('examen');
-
 
 Route::get('/home/profesor/pregunta', [PreguntaController::class, 'index'])->name('pregunta');
 
 Route::post('/home/profesor/pregunta', [PreguntaController::class, 'store'])->name('pregunta.store');
+
+Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('examen');
 
 Route::view('/home/profesor/alumno', 'profesor.alumno')->name('alumno');

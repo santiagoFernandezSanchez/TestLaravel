@@ -40,7 +40,9 @@
                         </div>
                     </div>
 
-                    <p>Materia: {{ Auth::user()->materias }}</p>
+
+
+                    <p>Materia: {{  }}</p>
 
                     <p>Nivel: {{ Auth::user()->materias }}</p>
 

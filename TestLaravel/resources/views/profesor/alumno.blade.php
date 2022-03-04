@@ -71,7 +71,7 @@
 
                 </table>
 
-                <input type="hidden" name="materia_id" value="{{ Auth::user()->id }}">
+
 
                 <button type="submit" class="btn btn-primary mt-4">Añadir alumno</button>
 

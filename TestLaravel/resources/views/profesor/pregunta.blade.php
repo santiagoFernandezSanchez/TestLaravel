@@ -28,8 +28,6 @@
 
                     <option selected>Seleccione un tema</option>
 
-                    {{ $temas = Auth::user()->materias->temas }}
-
                     @foreach ( $temas as $tema )
 
                         <option value="{{ $tema->id }}"> Tema {{ $tema->numero }}: {{ $tema->nombre }} </option>

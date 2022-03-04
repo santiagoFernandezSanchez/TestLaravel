@@ -10,7 +10,9 @@ class PreguntaController extends Controller
 {
     public function index(){
 
-        return view('profesor.pregunta');
+        $temas = auth()->user()->materias->temas;
+
+        return view('profesor.pregunta', compact('temas'));
     }
 
     public function store(Request $request){

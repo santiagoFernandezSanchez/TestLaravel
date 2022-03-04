@@ -20,12 +20,7 @@
                 </thead>
                 <tbody>
 
-                    @foreach (Auth::user()->materias as $alumnos)
-                    <tr>
-                        <th scope="row">{{$alumnos->user_id}}</th>
-                        <td>{{$tema->nombre}}</td>
-                    </tr>
-                    @endforeach
+                    
 
                 </tbody>
             </table>
@@ -39,16 +34,7 @@
         <div class="col-3"></div>
         <div class="col">
 
-            <form action="{{route('alumno.store')}}" method="post">
-                @csrf
-                <div class="form-group">
-                    <label for="numero"><h5>N</h5></label>
-                    <input type="text" name="numero" id="numero" class="form-control" value="{{old('numero')}}">
-                </div>
-
-                <button type="submit" class="btn btn-primary mt-4">Añadir alumno</button>
-
-            </form>
+           
 
         </div>
         <div class="col-3"></div>

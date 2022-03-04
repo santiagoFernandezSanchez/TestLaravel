@@ -32,6 +32,9 @@ class User extends Authenticatable
         return $this->belongsToMany( Examen::class );
     }
 
+    public function materias_alumno(){
+        return $this->belongsTo( Materia::class );
+    }
 
 
     /**

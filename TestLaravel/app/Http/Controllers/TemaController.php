@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tema;
 use App\Models\User;
 use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\DB;
 
 class TemaController extends Controller
 {
@@ -14,7 +15,18 @@ class TemaController extends Controller
 
     public function create() {
 
-        return view('profesor.tema');
+        $materia = DB::table('materias')
+        ->select('*')
+        ->where('id', auth()->id())
+        ->get();
+
+        $materiadeusuario = $materia[0];
+
+
+
+
+
+        return view('profesor.tema',compact('materia'));
     }
 
 

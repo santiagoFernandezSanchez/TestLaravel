@@ -25,7 +25,8 @@
                 </thead>
                 <tbody>
 
-                    @foreach (Auth::user()->materias->temas as $tema)
+
+                    @foreach (Auth::user()->materias->first()->temas as $tema)
                     <tr>
                         <th scope="row">{{$tema->numero}}</th>
                         <td>{{$tema->nombre}}</td>

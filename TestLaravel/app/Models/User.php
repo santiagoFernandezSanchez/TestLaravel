@@ -25,7 +25,7 @@ class User extends Authenticatable
     ];
 
     public function materias(){
-        return $this->hasOne( Materia::class );
+        return $this->belongsTo( Materia::class );
     }
 
     public function examens(){

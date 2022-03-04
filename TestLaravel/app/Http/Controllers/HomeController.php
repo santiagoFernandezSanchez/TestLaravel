@@ -23,14 +23,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        $nombre_nivel = DB::table('materias')
-        ->join('nivels', 'nivels.id', '=', 'materias.nivel_id')
-        ->select('nivels.nombre')
-        ->where('user_id', auth()->id())
-        ->get();
+     public function index()
+     {
+    //     $nombre_nivel = DB::table('materias')
+    //     ->join('nivels', 'nivels.id', '=', 'materias.nivel_id')
+    //     ->select('nivels.nombre')
+    //     ->where('user_id', auth()->id())
+    //     ->get();
 
-        return view('home', compact('nombre_nivel'));
-    }
+    //     return view('home', compact('nombre_nivel'));
+
+    return view('home');
+     }
 }

@@ -35,8 +35,6 @@ class AlumnoController extends Controller
         ->select('*')
         ->where('id', $request->id)
         ->update(['materia_id' => Auth()->id()]);
-
-        return view('profesor.alumno'); 
     
     }
 

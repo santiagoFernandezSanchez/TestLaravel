@@ -36,7 +36,7 @@ class AlumnoController extends Controller
         ->where('id', $request->id)
         ->update(['materia_id' => $request->get('materia_id')]);
 
-        return view('profesor.alumno');
+
 
         return redirect('/home/profesor/alumno')->with('exito', 'Usuario añadido con éxito');
 

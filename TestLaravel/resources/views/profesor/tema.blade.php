@@ -57,17 +57,6 @@
                 <div class="form-group">
                     <label for="numero"><h5>Numero del tema</h5></label>
                     <input type="text" name="numero" id="numero" class="form-control" value="{{old('numero')}}">
-
-                    <!-- MÉTODO PARA NO INTRODUCIR UN TEMA REPETIDO -->
-
-                    {{-- <!-- <select>
-                        @for($i = $tema->last()->numero, $i < 30; $i++; );
-                        <option value="{{ $i }}">{{ $i }}</option>
-                        @endfor
-                    </select> --> --}}
-
-
-
                 </div>
 
                 <div class="form-group mt-4">

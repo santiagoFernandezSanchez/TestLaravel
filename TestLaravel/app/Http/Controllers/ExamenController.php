@@ -26,6 +26,11 @@ class ExamenController extends Controller
 
     public function store(Request $request) {
 
+        $request->validate([
+
+            'numero_preguntas'=>'min: 10| max: 15'
+        ]);
+
         $examen = new Examen([
 
             'niveles' => $request->get('niveles'),
@@ -33,7 +38,7 @@ class ExamenController extends Controller
             'fecha_inicio' => $request->get('fecha_inicio'),
             'fecha_final'=> $request->get('fecha_final'),
             'tema_id'=> $request->get('tema_id')
-        ])
+        ]);
 
         $examen->save();
         return view('profesor.examen')->with('examen_creado', 'Examen creado con exito');

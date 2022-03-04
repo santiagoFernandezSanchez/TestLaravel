@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Examen;
 
 class ExamenController extends Controller
 {
@@ -11,13 +12,12 @@ class ExamenController extends Controller
 
     public function show() {
 
-
-
         $temas = DB::table('materias')
         ->join('temas', 'temas.materia_id', 'materias.id')
         ->select('*')
         ->where('temas.materia_id', auth()->user()->materia_id)
         ->get();
+
 
         return view('profesor.examen', compact('temas'));
 
@@ -26,11 +26,6 @@ class ExamenController extends Controller
 
 
     public function store(Request $request) {
-
-        $request->validate([
-
-            'numero_preguntas'=>'min: 10| max: 15'
-        ]);
 
         $examen = new Examen([
 
@@ -42,9 +37,8 @@ class ExamenController extends Controller
         ]);
 
         $examen->save();
-        return view('profesor.examen')->with('examen_creado', 'Examen creado con exito');
 
+        return redirect('/home/profesor/examen')->with('examen_creado', 'Examen creado con exito');
     }
-
 
 }

@@ -11,7 +11,8 @@ class Examen extends Model {
         'niveles',
         'numero_preguntas',
         'fecha_inicio',
-        'fecha_final'
+        'fecha_final',
+        'tema_id'
     ];
 
     public function users(){

@@ -31,7 +31,7 @@ class TemaController extends Controller
 
             'numero' => $request->get('numero'),
             'nombre' => $request->get('nombre'),
-            'materia_id' => auth()->user()->materia_id //Lo tenias puesto como auth()->user()->materias->id
+            'materia_id' => auth()->user()->materia_id
         ]);
 
         $tema->save();

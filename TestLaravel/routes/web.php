@@ -31,22 +31,33 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->name('tema.create');
+// PROFESOR //
 
+// Tema
+Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->name('tema.create');
 Route::post('/home/profesor/tema', [TemaController::class,'store'])->name('tema.store');
 
+// Pregunta
 Route::get('/home/profesor/pregunta', [PreguntaController::class, 'index'])->name('pregunta');
-
 Route::post('/home/profesor/pregunta', [PreguntaController::class, 'store'])->name('pregunta.store');
 
+// Examen
 Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('examen');
-
 Route::post('/home/profesor/examen', [ExamenController::class, 'store'])->name('examen.store');
 
+// Alumno
 Route::get('/home/profesor/alumno', [AlumnoController::class, 'inscrito'])->name('alumno');
-
 Route::post('/home/profesor/alumno', [AlumnoController::class, 'update'])->name('alumno.update');
 
+
+// ALUMNO //
 Route::get('/home/alumno/examen', [AlumnoController::class, 'mostrarNota'])->name('nota');
 
+
 Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen']);
+
+
+// ADMIN //
+Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->name('tema.create');
+Route::post('/home/profesor/tema', [TemaController::class,'store'])->name('tema.store');
+

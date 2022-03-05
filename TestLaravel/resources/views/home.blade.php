@@ -21,19 +21,19 @@
 
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('tema.create') }}">Crear tema</a>
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('tema.create') }}">Editar tema</a>
                         </div>
                     </div>
 
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('examen') }}">Crear examen</a>
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('examen') }}">Editar examen</a>
                         </div>
                     </div>
 
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('pregunta') }}">Crear pregunta</a>
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('pregunta') }}">Editar pregunta</a>
                         </div>
                     </div>
 
@@ -84,9 +84,6 @@
                                         <td>(Fecha)</td>
                                     </tr>
 
-
-
-
                                 </tbody>
                             </table>
                         </div>
@@ -133,7 +130,29 @@
                     <!-- ADMINISTRADOR -->
                     @if ( Auth::user()->rol == 'admin' )
 
-                    <p>Soy admin</p>
+                    <div class="row mt-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('tema.create') }}">Editar tema</a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('examen') }}">Editar examen</a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('pregunta') }}">Editar pregunta</a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('alumno') }}">Editar usuario</a>
+                        </div>
+                    </div>
 
                     @endif
 

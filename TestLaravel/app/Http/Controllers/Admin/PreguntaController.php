@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pregunta;
+use Illuminate\Support\Facades\DB;
 
 class PreguntaController extends Controller
 {
@@ -22,7 +23,13 @@ class PreguntaController extends Controller
 
 
     public function create(){    
-        return view('admin.crearPregunta');
+
+        $temas = DB::table('materias')
+        ->join('temas', 'temas.materia_id', 'materias.id')
+        ->select('*')
+        ->get();
+
+        return view('admin.crearPregunta' , compact('temas'));
     }
 
     
@@ -67,10 +74,14 @@ class PreguntaController extends Controller
     public function update(Request $request, Pregunta $pregunta){
 
         $request->validate([
-            'name' => 'required',
-            'rol' => 'required',
-            'email' => 'required',
-            'materia_id' => 'required|numeric'
+            'nivel' => 'required',
+            'enunciado' => 'required',
+            'respuesta1' => 'required',
+            'respuesta2' => 'required',
+            'respuesta3' => 'required',
+            'respuesta4' => 'required',
+            'correcta' => 'required',
+            'tema_id' => 'required|numeric'
         ]);
 
         $pregunta->update($request->all());

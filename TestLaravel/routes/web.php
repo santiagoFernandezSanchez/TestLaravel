@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AlumnoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -55,5 +56,10 @@ Route::get('/home/alumno/examen', [AlumnoController::class, 'mostrarNota'])->nam
 
 
 // ADMIN //
-Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->name('tema.create');
-Route::post('/home/profesor/tema', [TemaController::class,'store'])->name('tema.store');
+
+// Usuarios
+Route::resource('/home/admin/usuarios', AdminUserController::class);
+
+// temas
+Route::get('/home/admin/tema/create', [TemaController::class, 'create'])->name('tema.create');
+Route::post('/home/admin/tema', [TemaController::class,'store'])->name('tema.store');

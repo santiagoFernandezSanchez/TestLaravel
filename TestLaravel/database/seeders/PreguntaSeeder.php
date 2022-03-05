@@ -294,6 +294,270 @@ class PreguntaSeeder extends Seeder
         DB::table('preguntas')->insert([
 
             'nivel' => 'Intermedio',
+            'enunciado' => '¿Quién ganó los Squid Craft Games?',
+            'respuesta1' => 'MarkiLokuras',
+            'respuesta2' => 'elxokas',
+            'respuesta3' => 'OlliGamerZ',
+            'respuesta4' => 'Luzu',
+            'correcta' => 'OlliGamerZ',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => '¿En qué batalla murió Napoleón?',
+            'respuesta1' => 'En su última batalla',
+            'respuesta2' => 'En la batalla de Waterloo',
+            'respuesta3' => 'En la batalla de Trafalgar',
+            'respuesta4' => 'No murió, aún sigue en nuestros corazones',
+            'correcta' => 'En la batalla de Waterloo',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => 'If you throw a red stone into a blue sea, what will it become?',
+            'respuesta1' => 'Evaporization',
+            'respuesta2' => 'Simply, wet stone',
+            'respuesta3' => 'Rainbow',
+            'respuesta4' => 'Idk',
+            'correcta' => 'Evaporization',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => '¿Cómo sigue la frase? Cuando ves memes en los que se usan elementos de la tabla periódica',
+            'respuesta1' => 'La quimíca es la hostia',
+            'respuesta2' => 'La química es lo mas',
+            'respuesta3' => 'Que chikilikuatre',
+            'respuesta4' => 'Que chingón',
+            'correcta' => 'La química es la hostia',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => '¿Cómo sigue la frase? Cuando este Halloween te vas a disfrazar de masculinidad',
+            'respuesta1' => 'Masculinidad frágil',
+            'respuesta2' => 'Masculinidad masculina',
+            'respuesta3' => 'La masculinidad te parece frágil, a mi me parece más fuerte que el hormigón armado',
+            'respuesta4' => 'La masculinidad',
+            'correcta' => 'La masculinidad te parece frágil, a mi me parece más fuerte que el hormigón armado',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => '¿Que es un ratón?',
+            'respuesta1' => 'Un software',
+            'respuesta2' => 'Un hardware',
+            'respuesta3' => 'Un animal',
+            'respuesta4' => 'Un plastico con luces',
+            'correcta' => 'Un hardware',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => '¿En que año Cristobal Colón descubrió América?',
+            'respuesta1' => 'En 1942',
+            'respuesta2' => 'En 1492',
+            'respuesta3' => 'En 712',
+            'respuesta4' => 'En 721',
+            'correcta' => 'En 1942',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => '¿En qué año se inventó la cerveza?',
+            'respuesta1' => 'En el año 2000',
+            'respuesta2' => 'En el año 1200',
+            'respuesta3' => 'En el año 4000 a.C',
+            'respuesta4' => 'En el año 2000 a.C',
+            'correcta' => 'En el año 4000 a.C',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => 'Empieza por A es un aerodino de ala fija, o aeronave con mayor densidad que el aire, dotado de alas y un espacio de carga, y capaz de volar impulsado por uno o más motores.',
+            'respuesta1' => 'Avion',
+            'respuesta2' => 'Arbol',
+            'respuesta3' => 'Aceite',
+            'respuesta4' => 'Alicopter',
+            'correcta' => 'Avion',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => 'Empieza por Z Calzado que cubre total o parcialmente el pie sin sobrepasar el tobillo, con una suela de un material casi siempre más duro que el resto.',
+            'respuesta1' => 'Zafacón',
+            'respuesta2' => 'Zafar',
+            'respuesta3' => 'Zafiro',
+            'respuesta4' => 'Zapato',
+            'correcta' => 'Zapato',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => 'Empieza por v estructura geológica por la que emerge el magma que se divide en lava y gases provenientes del interior de la Tierra.',
+            'respuesta1' => 'Vagón',
+            'respuesta2' => 'Vagoneta',
+            'respuesta3' => 'Vaca',
+            'respuesta4' => 'Volcán',
+            'correcta' => 'Volcán',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
+            'enunciado' => 'Tipos de variables en Java',
+            'respuesta1' => 'String, Int, Double, Boolean',
+            'respuesta2' => 'Palabra, Número, numero con decimal, verdadero o falso',
+            'respuesta3' => 'No se',
+            'respuesta4' => 'No contestar',
+            'correcta' => 'String, Int, Double, Boolean',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => '¿Qué es una foca?',
+            'respuesta1' => 'Un mamífero',
+            'respuesta2' => 'Un ave',
+            'respuesta3' => 'Un omnívoro',
+            'respuesta4' => 'Un viviparo',
+            'correcta' => 'Un mamífero',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => '¿Qué es un ornitorrinco?',
+            'respuesta1' => 'Un mamífero vivíparo',
+            'respuesta2' => 'Un mamífero ovíparo',
+            'respuesta3' => 'Un ave',
+            'respuesta4' => 'Un omnívoro',
+            'correcta' => 'Un mamífero ovíparo',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => '¿Cuál de las siguientes rocas es un mineral?',
+            'respuesta1' => 'Helicopter',
+            'respuesta2' => 'Avion',
+            'respuesta3' => 'Amatista',
+            'respuesta4' => 'pera',
+            'correcta' => 'Amatista',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => '¿Quién es Rodolfo?',
+            'respuesta1' => 'Un transeúnte',
+            'respuesta2' => 'Un pelo loco',
+            'respuesta3' => 'Una caja sorpresa en la cual sale Rodolfo',
+            'respuesta4' => 'No se',
+            'correcta' => 'Una caja sorpresa en la cual sale Rodolfo',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => '¿Quién tiro una taza en la resistencia gritando viva Ignatius?',
+            'respuesta1' => 'Folagor',
+            'respuesta2' => 'El contadores',
+            'respuesta3' => 'Ampeta metralleta',
+            'respuesta4' => 'Wismacho',
+            'correcta' => 'Wismacho',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => '¿Quién le saco un diente de una hostia en la entrevista de Cheeto?',
+            'respuesta1' => 'Wismichu a Dalas',
+            'respuesta2' => 'Darío a Orslok',
+            'respuesta3' => 'Orslok a Darío',
+            'respuesta4' => 'Dalas a Wismichu',
+            'correcta' => 'Darío a Orslok',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => '¿Quien es Jordi Wild?',
+            'respuesta1' => 'Un actor',
+            'respuesta2' => 'Un fisioculturista',
+            'respuesta3' => 'Un doctor',
+            'respuesta4' => 'Jordi Wild',
+            'correcta' => 'Jordi Wild',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => 'Como sigue el abcdario U,V,W,X,Y,',
+            'respuesta1' => 'Z',
+            'respuesta2' => 'S',
+            'respuesta3' => 'G',
+            'respuesta4' => 'D',
+            'correcta' => 'Z',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => '¿Como se llama la nueva canción de Rosalía?',
+            'respuesta1' => 'Con altura',
+            'respuesta2' => 'La fama',
+            'respuesta3' => 'Saoko',
+            'respuesta4' => 'Linda',
+            'correcta' => 'Saoko',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Avanzado',
+            'enunciado' => 'Ricardo, ¿este proyecto está aprobado con un 1,5/1,5?',
+            'respuesta1' => 'Si',
+            'respuesta2' => 'Si o si',
+            'respuesta3' => 'Si si si',
+            'respuesta4' => 'Si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si si Si si si si si si si si si si si si si si si si si',
+            'correcta' => 'Si',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Intermedio',
             'enunciado' => 'El monosacárido más representativo es la:',
             'respuesta1' => 'Glucosa',
             'respuesta2' => 'Fructosa',

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Examen;
+use App\Models\Examen_user;
+use Illuminate\Support\Carbon;
 
 class ExamenController extends Controller
 {
@@ -65,7 +67,7 @@ class ExamenController extends Controller
 
         $tema = $examenTema->first();
 
-        return view('alumno.hacer_examen',compact('tema','examenPreguntas'));
+        return view('alumno.hacer_examen',compact('tema','examenPreguntas','id'));
 
 
 
@@ -73,12 +75,16 @@ class ExamenController extends Controller
 
     public function corregirExamen(Request $request) {
 
+
         $contador = 0;
-        $flag=2;
-        $comparar;
+        $flag=1;
+        $comparar='';
+        echo($flag);
 
         $preguntas = $request->all();
         foreach ($preguntas as  $value) {
+
+
             # code...
 
             if($flag%2==0) {
@@ -90,7 +96,8 @@ class ExamenController extends Controller
                 if($comparar == $value) {
 
                     $contador++;
-                    echo($comparar);
+                    echo('Esto es comparar'.$comparar);
+                    echo('Esto es value').$value;
                 }
             }
 
@@ -98,6 +105,24 @@ class ExamenController extends Controller
 
 
         }
+
+        $alumnoHaHechoExamen = new Examen_user([
+
+
+            'examen_id' => $request->get('idexamen'),
+            'user_id' => auth()->user()->id,
+            'preguntas_acertadas' => $contador,
+            'fecha_validacion' => Carbon::now()
+
+
+
+        ]);
+
+        $alumnoHaHechoExamen->save();
+
+
+        return redirect('/home')->with('examen_terminado',' Examen hecho');
+
 
 
 

@@ -55,10 +55,10 @@ Route::post('/home/profesor/alumno', [AlumnoController::class, 'update'])->name(
 
 
 // ALUMNO //
-Route::get('/home/alumno/examen', [AlumnoController::class, 'mostrarNota'])->name('nota');
+Route::get('/home', [AlumnoController::class, 'mostrarNota'])->name('nota');
 
 
-Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen']);
+Route::get('/home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen']);
 
 
 // Examen Corregir //

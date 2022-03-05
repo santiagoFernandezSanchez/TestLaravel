@@ -50,6 +50,8 @@
 
     @endforeach
 
+    <input type="hidden" name="idexamen" value="{{ $id }}">
+
     <button type="submit">Terminar examen</button>
 
 </form>

@@ -66,7 +66,7 @@
                             <table class="table table-sm table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">(Asignatura)</th>
+
                                         <th scope="col">(Tema)</th>
                                         <th scope="col">(Nota)</th>
                                         <th scope="col">(Fecha)</th>
@@ -77,12 +77,17 @@
                                     <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
 
 
+                                    @foreach ($notaExamen as $nota)
+
+
                                     <tr>
-                                        <td scope="row">(Nombre Asignatura)</td>
-                                        <td>(Tema)</td>
-                                        <td>(Nota)</td>
-                                        <td>(Fecha)</td>
+
+                                        <td>Tema {{ $nota->numero }}: {{ $nota->nombre }}</td>
+                                        <td>{{ $nota->preguntas_acertadas }}</td>
+                                        <td>{{ $nota->fecha_validacion }}</td>
                                     </tr>
+
+                                    @endforeach
 
                                 </tbody>
                             </table>
@@ -104,7 +109,7 @@
                             <table class="table table-sm table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">(Asignatura)</th>
+
                                         <th scope="col">(Tema)</th>
                                         <th scope="col">(Fecha)</th>
                                     </tr>
@@ -113,7 +118,7 @@
 
                                     <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
                                     <tr>
-                                        <td scope="row">(Nombre Asignatura)</td>
+
                                         <td>(Tema)</td>
                                         <td>(Fecha)</td>
                                     </tr>

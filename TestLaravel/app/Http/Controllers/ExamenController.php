@@ -41,6 +41,31 @@ class ExamenController extends Controller
         return redirect('/home/profesor/examen')->with('examen_creado', 'Examen creado con exito');
     }
 
+    public function hacerExamen($id) {
+
+
+
+
+        $examenTema = DB::table('examens')
+        ->select('*')
+        ->where('examens.id', $id);
+
+        dd($examenTema);
+
+        $examenPreguntas = DB::table('preguntas')
+        ->join('temas','preguntas.tema_id','temas.id')
+        ->join('examens','temas.id','examens.tema_id')
+        ->select('*')
+        ->where('preguntas.nivel',$examenTema->niveles)
+        ->limit($examenTema->niveles)
+        ->inRandomOrder();
+
+        return view('alumno.hacer_examen',compact('examenTema','examenPreguntas'));
+
+
+
+    }
+
 
 
 }

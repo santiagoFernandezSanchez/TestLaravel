@@ -57,10 +57,10 @@ Route::post('/home/profesor/alumno', [AlumnoController::class, 'update'])->name(
 
 
 // ALUMNO //
-Route::get('/home', [AlumnoController::class, 'mostrarNota'])->name('nota');
+Route::get('/home/alumno/examen', [AlumnoController::class, 'mostrarNota'])->name('nota');
 
 
-Route::get('/home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen']);
+Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen']);
 
 
 // Examen Corregir //
@@ -82,10 +82,8 @@ Route::resource('/home/admin/examenes', AdminExamenController::class);
 // Preguntas
 Route::resource('/home/admin/preguntas', AdminPreguntaController::class);
 
-
 // Niveles
 Route::resource('/home/admin/niveles', NivelController::class);
 
 // Materias
 Route::resource('/home/admin/materias', MateriaController::class);
-

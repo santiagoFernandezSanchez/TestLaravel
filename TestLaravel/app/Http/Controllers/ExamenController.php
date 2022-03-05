@@ -61,7 +61,7 @@ class ExamenController extends Controller
         ->limit($examenTema->first()->numero_preguntas)
         ->inRandomOrder()->get();
 
-        dd($examenPreguntas);
+
 
         $tema = $examenTema->first();
 

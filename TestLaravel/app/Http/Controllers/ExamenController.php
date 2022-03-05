@@ -21,7 +21,6 @@ class ExamenController extends Controller
 
         return view('profesor.examen', compact('temas'));
 
-
     }
 
 

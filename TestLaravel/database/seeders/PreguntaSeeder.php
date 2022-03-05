@@ -149,6 +149,150 @@ class PreguntaSeeder extends Seeder
 
         DB::table('preguntas')->insert([
 
+            'nivel' => 'Básico',
+            'enunciado' => '¿Qué es la Tierra?',
+            'respuesta1' => 'La tierra es un planeta',
+            'respuesta2' => 'La Tierra es un planeta',
+            'respuesta3' => 'Sócrates',
+            'respuesta4' => 'Platón',
+            'correcta' => 'La Tierra es un planeta',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿De qué está compuesto el sol?',
+            'respuesta1' => 'De un 50% H2O, 30% Metano 20% Helio',
+            'respuesta2' => 'De un 71% Hidrógeno, 27% Helio 2% Helio',
+            'respuesta3' => 'No se',
+            'respuesta4' => 'Es el sol',
+            'correcta' => 'De un 71% Hidrógeno, 27% Helio 2% Helio',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Cómo se craftea una espada de diamante?',
+            'respuesta1' => 'Un palo y dos diamantes',
+            'respuesta2' => 'Dos palos y un diamante',
+            'respuesta3' => 'Con netherite',
+            'respuesta4' => 'Con agua',
+            'correcta' => 'Un palo y dos diamantes',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Cuántos bloques se necesitan para construir una beacon maxeada?',
+            'respuesta1' => '164',
+            'respuesta2' => '64',
+            'respuesta3' => '24',
+            'respuesta4' => '14',
+            'correcta' => '164',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Qué material necesitas para intercambiar con los aldeanos?',
+            'respuesta1' => 'Carbon',
+            'respuesta2' => 'Netherite',
+            'respuesta3' => 'Paja',
+            'respuesta4' => 'Esmeralda',
+            'correcta' => 'Esmeralda',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Quién es Jordi ENP?',
+            'respuesta1' => 'Un filósofo',
+            'respuesta2' => 'Un doctor',
+            'respuesta3' => 'Un actor',
+            'respuesta4' => 'Una mosca',
+            'correcta' => 'Un actor',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Quién es Mr Jagger?',
+            'respuesta1' => 'JaggerPrincesa',
+            'respuesta2' => 'Un boxeador',
+            'respuesta3' => 'Un cocinero',
+            'respuesta4' => 'Dynamó',
+            'correcta' => 'JaggerPrincesa',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Cuántos g son 1kg de paja?',
+            'respuesta1' => '1g',
+            'respuesta2' => '10g',
+            'respuesta3' => '100g',
+            'respuesta4' => '1000g',
+            'correcta' => '1000g',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Que significa a?',
+            'respuesta1' => 'A mi no me digas a porque pienso que me dices Arriba España',
+            'respuesta2' => 'a',
+            'respuesta3' => 'A mi no me digas a porque pienso que me dices hazte un trompo',
+            'respuesta4' => 'A mi no me digas a porque pienso que me dices ankara Messi',
+            'correcta' => 'a',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Cuál es la canción del contadores?',
+            'respuesta1' => 'Es AaaaAAAaAaAaAaAaaaaaaaaaAAAA',
+            'respuesta2' => 'Es Two Steps From Hell',
+            'respuesta3' => 'Quien es el contadores',
+            'respuesta4' => 'Siii sii siii',
+            'correcta' => 'Es Two Steps From Hell',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Illojuan y LMDShow son hermanos?',
+            'respuesta1' => 'Si, son hermanos',
+            'respuesta2' => 'No, son superhéroes',
+            'respuesta3' => 'No, yo soy tu padre',
+            'respuesta4' => 'Adelante, LMDShow',
+            'correcta' => 'Si, son hermanos',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
+            'nivel' => 'Básico',
+            'enunciado' => '¿Cómo se dice mi coche fue robado en inglés?',
+            'respuesta1' => 'My coche was robado',
+            'respuesta2' => 'My stolen was car',
+            'respuesta3' => 'Car stolen was my',
+            'respuesta4' => 'My car was stolen',
+            'correcta' => 'My car was stolen',
+            'tema_id' => '1'
+        ]);
+
+        DB::table('preguntas')->insert([
+
             'nivel' => 'Intermedio',
             'enunciado' => 'El monosacárido más representativo es la:',
             'respuesta1' => 'Glucosa',
@@ -158,6 +302,7 @@ class PreguntaSeeder extends Seeder
             'correcta' => 'Glucosa',
             'tema_id' => '2'
         ]);
+
 
         DB::table('preguntas')->insert([
 

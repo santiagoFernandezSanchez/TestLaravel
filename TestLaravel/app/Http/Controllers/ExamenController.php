@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use DB;
 use App\Models\Examen;
 
 class ExamenController extends Controller
@@ -46,20 +46,26 @@ class ExamenController extends Controller
 
 
         $examenTema = DB::table('examens')
+        ->join('temas', 'temas.id','examens.tema_id')
         ->select('*')
-        ->where('examens.id', $id);
+        ->where('examens.id', $id)->get();
 
-        dd($examenTema);
+
+
 
         $examenPreguntas = DB::table('preguntas')
         ->join('temas','preguntas.tema_id','temas.id')
         ->join('examens','temas.id','examens.tema_id')
-        ->select('*')
-        ->where('preguntas.nivel',$examenTema->niveles)
-        ->limit($examenTema->niveles)
-        ->inRandomOrder();
+        ->select('preguntas.*')
+        ->where('preguntas.nivel',$examenTema->first()->niveles)
+        ->limit($examenTema->first()->numero_preguntas)
+        ->inRandomOrder()->get();
 
-        return view('alumno.hacer_examen',compact('examenTema','examenPreguntas'));
+
+
+        $tema = $examenTema->first();
+
+        return view('alumno.hacer_examen',compact('tema','examenPreguntas'));
 
 
 

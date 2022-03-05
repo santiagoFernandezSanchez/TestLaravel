@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Examen extends Model {
 
     protected $fillable = [
+        'id',
         'niveles',
         'numero_preguntas',
         'fecha_inicio',

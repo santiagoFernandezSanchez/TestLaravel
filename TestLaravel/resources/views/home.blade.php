@@ -132,19 +132,19 @@
 
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('tema.create') }}">Editar tema</a>
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('temas.index') }}">Editar tema</a>
                         </div>
                     </div>
 
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('examen') }}">Editar examen</a>
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('examenes.index') }}">Editar examen</a>
                         </div>
                     </div>
 
                     <div class="row mt-4">
                         <div class="col d-flex justify-content-center">
-                            <a class="btn btn-outline-primary btn-lg" href="{{ route('pregunta') }}">Editar pregunta</a>
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('preguntas.index') }}">Editar pregunta</a>
                         </div>
                     </div>
 

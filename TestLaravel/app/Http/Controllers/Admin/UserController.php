@@ -8,87 +8,55 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
+    
+
+    public function index(){
         //
         $usuarios = User::all();
 
         return view('admin.usuarios', compact('usuarios'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return view('admin.create');
+
+    public function create(){    
+        return view('admin.crearUsuario');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
+    
+    public function store(Request $request){
+
         $request->validate([
-            'nombre' => 'required',
-            'descripcion' => 'required',
-            'precio' => 'required|numeric'
+            'name' => 'required',
+            'rol' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'materia_id' => 'required|numeric'
         ]);
 
-        $User = new User([
-            'nombre' => $request->get('nombre'),
-            'descripcion' => $request->get('descripcion'),
-            'precio' => $request->get('precio')
+        $usuario = new User([
+            'name' => $request->get('name'),
+            'rol' => $request->get('rol'),
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            'materia_id' => $request->get('materia_id')
         ]);
 
-        $User->save();
+        $usuario->save();
 
-        return redirect('/Users');
+        return redirect('/home/admin/usuarios');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $User
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $User)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $User
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
+    
+    public function edit($id){
+        
         $usuario = User::find($id);
         return view('admin.editarUsuario', compact('usuario'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $User
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $usuario)
-    {
+    
+
+    public function update(Request $request, User $usuario){
+
         $request->validate([
             'name' => 'required',
             'rol' => 'required',
@@ -101,17 +69,12 @@ class UserController extends Controller
         return redirect('/home/admin/usuarios');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $User
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $User = User::find($id);
-        $User->delete();
+    
+    public function destroy($id) {
 
-        return redirect('/Users');
+        $usuario = User::findOrfail($id);
+        $usuario->delete();
+
+        return redirect('/home/admin/usuarios');
     }
 }

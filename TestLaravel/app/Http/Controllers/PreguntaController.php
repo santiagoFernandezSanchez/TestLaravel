@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pregunta;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class PreguntaController extends Controller
 {

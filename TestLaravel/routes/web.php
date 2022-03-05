@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\ExamenController as AdminExamenController;
+use App\Http\Controllers\Admin\PreguntaController as AdminPreguntaController;
+use App\Http\Controllers\Admin\TemaController as AdminTemaController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\AlumnoController;
 use Illuminate\Support\Facades\Route;
@@ -63,6 +66,11 @@ Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExame
 // Usuarios
 Route::resource('/home/admin/usuarios', AdminUserController::class);
 
-// temas
-Route::get('/home/admin/tema/create', [TemaController::class, 'create'])->name('tema.create');
-Route::post('/home/admin/tema', [TemaController::class,'store'])->name('tema.store');
+// Temas
+Route::resource('/home/admin/temas', AdminTemaController::class);
+
+// Examenes
+Route::resource('/home/admin/examenes', AdminExamenController::class);
+
+// Preguntas
+Route::resource('/home/admin/preguntas', AdminPreguntaController::class);

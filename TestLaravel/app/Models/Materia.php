@@ -9,7 +9,6 @@ class Materia extends Model {
 
     protected $fillable = [
         'nombre',
-
         'nivel_id'
     ];
 

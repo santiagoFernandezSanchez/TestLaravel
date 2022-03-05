@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\ExamenController as AdminExamenController;
+use App\Http\Controllers\Admin\MateriaController;
+use App\Http\Controllers\Admin\NivelController;
 use App\Http\Controllers\Admin\PreguntaController as AdminPreguntaController;
 use App\Http\Controllers\Admin\TemaController as AdminTemaController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -79,3 +81,11 @@ Route::resource('/home/admin/examenes', AdminExamenController::class);
 
 // Preguntas
 Route::resource('/home/admin/preguntas', AdminPreguntaController::class);
+
+
+// Niveles
+Route::resource('/home/admin/niveles', NivelController::class);
+
+// Materias
+Route::resource('/home/admin/materias', MateriaController::class);
+

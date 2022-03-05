@@ -159,6 +159,18 @@
                         </div>
                     </div>
 
+                    <div class="row mt-4 mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('niveles.index') }}">Editar niveles</a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <a class="btn btn-outline-primary btn-lg" href="{{ route('materias.index') }}">Editar materias</a>
+                        </div>
+                    </div>
+
                     @endif
 
                 </div>

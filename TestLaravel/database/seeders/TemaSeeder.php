@@ -34,5 +34,25 @@ class TemaSeeder extends Seeder
         'nombre' => 'Los lípidos',
         'materia_id' => '1'
        ]);
+
+// TEMAS MATEMATICAS
+
+        DB::table('temas')->insert([
+            'numero' => '1',
+            'nombre' => 'Los números reales',
+            'materia_id' => '2'
+        ]);
+
+        DB::table('temas')->insert([
+            'numero' => '2',
+            'nombre' => 'Las fracciones',
+            'materia_id' => '2'
+        ]);
+
+        DB::table('temas')->insert([
+            'numero' => '3',
+            'nombre' => 'Las ecuaciones',
+            'materia_id' => '2'
+        ]);
     }
 }

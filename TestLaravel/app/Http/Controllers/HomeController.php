@@ -32,6 +32,8 @@ class HomeController extends Controller
          ->where('materias.id', auth()->id())
          ->get();
 
+
+
          $nombre_materia = DB::table('materias')
          ->select('materias.nombre')
          ->where('id', auth()->id())

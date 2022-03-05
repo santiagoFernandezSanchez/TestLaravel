@@ -46,6 +46,8 @@
     </div>
 </div>
 
+<input type="hidden" name="correcta{{ $pregunta->id }}" value="{{ $pregunta->correcta }}">
+
     @endforeach
 
     <button type="submit">Terminar examen</button>

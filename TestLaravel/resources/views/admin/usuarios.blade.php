@@ -21,28 +21,30 @@
           <td>Rol</td>
           <td>Email</td>
           <td>ID Materia</td>
-          <td>Actualizado última vez</td>
+          <td>Actualizado por última vez</td>
           <td colspan=2>Acciones</td>
         </tr>
       </thead>
       <tbody>
         @foreach($usuarios as $usuario)
         <tr>
-          <td>{{$usuario->id}}</td>
+          <td class="text-center">{{$usuario->id}}</td>
           <td>{{$usuario->name}} </td>
           <td>{{$usuario->rol}}</td>
           <td>{{$usuario->email}}</td>
-          <td>{{$usuario->materia_id}}</td>
+          <td class="text-center">{{$usuario->materia_id}}</td>
           <td>{{$usuario->updated_at}}</td>
           <td>
             <a href="{{ route('usuarios.edit',$usuario->id)}}" class="btn btn-primary">Editar</a>
           </td>
           <td>
+
             <form action="{{ route('usuarios.destroy', $usuario->id)}}" method="post">
               @csrf
               @method('DELETE')
               <button class="btn btn-danger" type="submit">Borrar</button>
             </form>
+
           </td>
         </tr>
         @endforeach
@@ -51,4 +53,4 @@
   </div>
   <div class="col-2"></div>
 </div>
-    @endsection
+@endsection

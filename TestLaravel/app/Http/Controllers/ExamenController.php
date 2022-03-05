@@ -71,6 +71,39 @@ class ExamenController extends Controller
 
     }
 
+    public function corregirExamen(Request $request) {
+
+        $contador = 0;
+        $flag=2;
+        $comparar;
+
+        $preguntas = $request->all();
+        foreach ($preguntas as  $value) {
+            # code...
+
+            if($flag%2==0) {
+
+                $comparar = $value;
+
+            } else {
+
+                if($comparar == $value) {
+
+                    $contador++;
+                    echo($comparar);
+                }
+            }
+
+            $flag++;
+
+
+        }
+
+
+
+
+    }
+
 
 
 }

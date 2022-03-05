@@ -58,6 +58,11 @@ Route::get('/home/alumno/examen', [AlumnoController::class, 'mostrarNota'])->nam
 Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen']);
 
 
+// Examen Corregir //
+Route::get('home/alumno/examenHecho', [ExamenController::class, 'corregirExamen'])->name('corregir');
+Route::post('home/alumno/examenHecho', [ExamenController::class, 'corregirExamen'])->name('corregir');
+
+
 // ADMIN //
 
 // Usuarios

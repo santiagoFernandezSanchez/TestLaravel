@@ -22,7 +22,7 @@
 
 <div class="row">
 
-    <form action="" method="post">
+    <form action="{{ route('corregir') }}" method="post">
 
         @csrf
 

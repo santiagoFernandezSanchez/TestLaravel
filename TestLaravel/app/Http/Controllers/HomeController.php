@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Materia;
+use App\Models\Tema;
 use DB;
 
 class HomeController extends Controller
@@ -39,6 +40,25 @@ class HomeController extends Controller
          ->where('id', auth()->id())
          ->get();
 
-         return view('home', compact('nombre_nivel', 'nombre_materia'));
+
+        $notaExamen = DB::table('temas')
+        ->select('*')
+        ->join('examens','temas.id','examens.tema_id')
+        ->join('examen_users', 'examens.id', 'examen_users.examen_id')
+        ->join('users', 'examen_users.user_id', 'users.id')
+        ->where('examen_users.user_id',auth()->user()->id)
+        ->whereNotNull('fecha_validacion')
+        ->get();
+
+
+
+
+
+
+
+
+
+
+         return view('home', compact('nombre_nivel', 'nombre_materia','notaExamen'));
      }
 }

@@ -52,6 +52,14 @@
                     <!-- ALUMNO -->
                     @if ( Auth::user()->rol == 'alumno' )
 
+                    @if (session('examen_terminado'))
+
+                    <div class="alert alert-success">
+                        {{ session('examen_terminado') }}
+                    </div>
+
+                    @endif
+
                     <!-- MIS CALIFICACIONES -->
                     <div class="row mt-5">
                         <div class="col">

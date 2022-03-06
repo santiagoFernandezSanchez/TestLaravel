@@ -77,7 +77,7 @@
 
                                         <th scope="col">Tema</th>
                                         <th scope="col">Nota</th>
-                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Fecha realizada</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -117,7 +117,9 @@
                                     <tr>
 
                                         <th scope="col">Id Examen</th>
+                                        <th scope="col">Tema</th>
                                         <th scope="col">Fecha Inicio</th>
+                                        <th scope="col">Fecha Fin</th>
                                         <th scope="col">Acciones</th>
 
                                     </tr>
@@ -125,15 +127,18 @@
                                 <tbody>
 
                                     <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
-                                    @foreach($examen_pendiente as $pendiente)
 
+                                    @foreach($examen_pendiente as $pendiente)
 
                                     <tr>
 
                                         <td>{{ $pendiente->id }}</td>
+                                        <td>Tema {{ $pendiente->numero }}: {{ $pendiente->nombre}}</td>
                                         <td>{{ $pendiente->fecha_inicio }}</td>
+                                        <td>{{ $pendiente->fecha_final }}</td>
                                         <td><a class="btn btn-primary" href="{{ route('alumno.haceExamen', $pendiente->id) }}">Realizar examen</a></td>
                                     </tr>
+
                                     @endforeach
 
                                 </tbody>

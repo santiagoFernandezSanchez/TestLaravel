@@ -76,18 +76,7 @@
 
                                     <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
 
-
-                                    @foreach ($notaExamen as $nota)
-
-
-                                    <tr>
-
-                                        <td>Tema {{ $nota->numero }}: {{ $nota->nombre }}</td>
-                                        <td>{{ $nota->preguntas_acertadas }}</td>
-                                        <td>{{ $nota->fecha_validacion }}</td>
-                                    </tr>
-
-                                    @endforeach
+                                    
 
                                 </tbody>
                             </table>

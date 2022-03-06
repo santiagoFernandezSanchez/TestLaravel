@@ -52,16 +52,7 @@ class AlumnoController extends Controller
         ->whereNotNull('fecha_validacion')
         ->get();
 
-
-
-
-
-
-
         return view('home',compact('notaExamen'));
-
-
-
 
     }
 

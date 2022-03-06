@@ -116,6 +116,8 @@
 
                                     <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
                                     @foreach($examen_pendiente as $pendiente)
+
+
                                     <tr>
 
                                         <td>{{ $pendiente->tema_id }}</td>

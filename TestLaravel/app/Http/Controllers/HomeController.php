@@ -55,9 +55,13 @@ class HomeController extends Controller
         $examen_pendiente = DB::table('materias')
         ->join('temas', 'materias.id', 'temas.materia_id')
         ->join('examens', 'temas.id', 'examens.tema_id')
+        ->join('examen_users', 'examen_users.examen_id', 'examens.id')
         ->select('examens.id', 'examens.niveles', 'examens.numero_preguntas', 'examens.fecha_inicio', 'examens.fecha_final', 'examens.tema_id')
         ->where('materias.id', auth()->user()->materia_id)
+        ->where('examen_users.user_id','!=',auth()->id())
         ->get();
+
+
 
 
          return view('home', compact('nombre_nivel', 'nombre_materia','notaExamen', 'examen_pendiente'));

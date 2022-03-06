@@ -116,8 +116,10 @@
                                 <thead>
                                     <tr>
 
-                                        <th scope="col">Tema_id</th>
+                                        <th scope="col">Id Examen</th>
                                         <th scope="col">Fecha Inicio</th>
+                                        <th scope="col">Acciones</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -128,8 +130,9 @@
 
                                     <tr>
 
-                                        <td>{{ $pendiente->tema_id }}</td>
+                                        <td>{{ $pendiente->id }}</td>
                                         <td>{{ $pendiente->fecha_inicio }}</td>
+                                        <td><a class="btn btn-primary" href="{{ route('alumno.haceExamen', $pendiente->id) }}">Realizar examen</a></td>
                                     </tr>
                                     @endforeach
 

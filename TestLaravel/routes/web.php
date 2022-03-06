@@ -59,7 +59,7 @@ Route::post('/home/profesor/alumno', [AlumnoController::class, 'update'])->name(
 // ALUMNO //
 
 
-Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen']);
+Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen'])->name('alumno.haceExamen');
 
 
 // Examen Corregir //

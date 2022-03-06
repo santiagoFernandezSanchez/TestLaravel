@@ -42,18 +42,13 @@ class ExamenController extends Controller
         return redirect('/home/profesor/examen')->with('examen_creado', 'Examen creado con exito');
     }
 
-    public function hacerExamen($id) {
-
-
-
+    public function hacerExamen($id){
 
         $examenTema = DB::table('examens')
         ->join('temas', 'temas.id','examens.tema_id')
         ->select('*')
-        ->where('examens.id', $id)->get();
-
-
-
+        ->where('examens.id', $id)
+        ->get();
 
         $examenPreguntas = DB::table('preguntas')
         ->join('temas','preguntas.tema_id','temas.id')
@@ -61,16 +56,15 @@ class ExamenController extends Controller
         ->select('preguntas.*')
         ->where('preguntas.nivel',$examenTema->first()->niveles)
         ->limit($examenTema->first()->numero_preguntas)
-        ->inRandomOrder()->get();
+        ->inRandomOrder()
+        ->get();
 
-
+        $preguntas = 1;
 
         $tema = $examenTema->first();
 
-        return view('alumno.hacer_examen',compact('tema','examenPreguntas','id'));
-
-
-
+        return view('alumno.hacer_examen',compact('tema','examenPreguntas','id', 'preguntas'));
+        
     }
 
     public function corregirExamen(Request $request) {
@@ -83,7 +77,6 @@ class ExamenController extends Controller
 
         $preguntas = $request->all();
         foreach ($preguntas as  $value) {
-
 
             # code...
 
@@ -103,32 +96,21 @@ class ExamenController extends Controller
 
             $flag++;
 
-
         }
 
         $alumnoHaHechoExamen = new Examen_user([
-
 
             'examen_id' => $request->get('idexamen'),
             'user_id' => auth()->user()->id,
             'preguntas_acertadas' => $contador,
             'fecha_validacion' => Carbon::now()
 
-
-
         ]);
 
         $alumnoHaHechoExamen->save();
 
-
         return redirect('/home')->with('examen_terminado',' Examen hecho');
 
-
-
-
-
     }
-
-
 
 }

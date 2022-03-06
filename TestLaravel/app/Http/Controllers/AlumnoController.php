@@ -40,21 +40,7 @@ class AlumnoController extends Controller
 
     }
 
-    public function mostrarNota () {
 
-
-        $notaExamen = DB::table('temas')
-        ->select('*')
-        ->join('examens','temas.id','examens.tema_id')
-        ->join('examen_users', 'examens.id', 'examen_users.examen_id')
-        ->join('users', 'examen_users.user_id', 'users.id')
-        ->where('examen_users.user_id',auth()->user()->id)
-        ->whereNotNull('fecha_validacion')
-        ->get();
-
-        return view('home',compact('notaExamen'));
-
-    }
 
 
 }

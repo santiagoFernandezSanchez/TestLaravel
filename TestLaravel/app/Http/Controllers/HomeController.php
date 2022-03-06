@@ -27,6 +27,8 @@ class HomeController extends Controller
      */
      public function index()
      {
+
+        //Solo vista profesores
          $nombre_nivel = DB::table('materias')
          ->join('nivels', 'nivels.id', '=', 'materias.nivel_id')
          ->select('nivels.nombre')
@@ -34,7 +36,7 @@ class HomeController extends Controller
          ->get();
 
 
-
+        //Solo vista profesores
          $nombre_materia = DB::table('materias')
          ->select('materias.nombre')
          ->where('id', auth()->id())
@@ -50,15 +52,14 @@ class HomeController extends Controller
         ->whereNotNull('fecha_validacion')
         ->get();
 
+        $examen_pendiente = DB::table('materias')
+        ->join('temas', 'materias.id', 'temas.materia_id')
+        ->join('examens', 'temas.id', 'examens.tema_id')
+        ->select('examens.id', 'examens.niveles', 'examens.numero_preguntas', 'examens.fecha_inicio', 'examens.fecha_final', 'examens.tema_id')
+        ->where('materias.id', auth()->user()->materia_id)
+        ->get();
 
 
-
-
-
-
-
-
-
-         return view('home', compact('nombre_nivel', 'nombre_materia','notaExamen'));
+         return view('home', compact('nombre_nivel', 'nombre_materia','notaExamen', 'examen_pendiente'));
      }
 }

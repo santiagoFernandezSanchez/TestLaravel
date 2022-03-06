@@ -67,16 +67,25 @@
                                 <thead>
                                     <tr>
 
-                                        <th scope="col">(Tema)</th>
-                                        <th scope="col">(Nota)</th>
-                                        <th scope="col">(Fecha)</th>
+                                        <th scope="col">Tema</th>
+                                        <th scope="col">Nota</th>
+                                        <th scope="col">Fecha</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
 
-                                    
+                                    @foreach ($notaExamen as $nota)
+
+                                    <tr>
+
+                                        <td>Tema {{ $nota->numero }}: {{ $nota->nombre }}</td>
+                                        <td>{{ $nota->preguntas_acertadas }}</td>
+                                        <td>{{ $nota->fecha_validacion }}</td>
+                                    </tr>
+
+                                    @endforeach
 
                                 </tbody>
                             </table>
@@ -84,10 +93,10 @@
                         <div class="col-2"></div>
                     </div>
 
-                    <!-- PRÓXIMOS EXÁMENES -->
+                    <!-- EXÁMENES PENDIENTES -->
                     <div class="row mt-5">
                         <div class="col">
-                            <h3>Próximos exámenes</h3>
+                            <h3>Exámenes pendientes</h3>
                         </div>
                     </div>
 
@@ -99,18 +108,20 @@
                                 <thead>
                                     <tr>
 
-                                        <th scope="col">(Tema)</th>
-                                        <th scope="col">(Fecha)</th>
+                                        <th scope="col">Tema_id</th>
+                                        <th scope="col">Fecha Inicio</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
+                                    @foreach($examen_pendiente as $pendiente)
                                     <tr>
 
-                                        <td>(Tema)</td>
-                                        <td>(Fecha)</td>
+                                        <td>{{ $pendiente->tema_id }}</td>
+                                        <td>{{ $pendiente->fecha_inicio }}</td>
                                     </tr>
+                                    @endforeach
 
                                 </tbody>
                             </table>

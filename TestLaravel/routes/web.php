@@ -35,6 +35,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Vista principal de los 3 roles
 Route::get('/home', [HomeController::class, 'index']);
 
 // PROFESOR //
@@ -56,18 +57,14 @@ Route::get('/home/profesor/alumno', [AlumnoController::class, 'inscrito'])->name
 Route::post('/home/profesor/alumno', [AlumnoController::class, 'update'])->name('alumno.update');
 
 
-// ALUMNO //
-
-
+// ALUMNO realiza examen //
 Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen'])->name('alumno.haceExamen');
 
-
 // Examen Corregir //
-Route::get('home/alumno/examenHecho', [ExamenController::class, 'corregirExamen'])->name('corregir');
 Route::post('home/alumno/examenHecho', [ExamenController::class, 'corregirExamen'])->name('corregir');
 
 
-// ADMIN //
+// --ADMIN-- //
 
 // Usuarios
 Route::resource('/home/admin/usuarios', AdminUserController::class);

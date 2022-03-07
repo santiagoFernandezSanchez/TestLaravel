@@ -49,20 +49,20 @@ class HomeController extends Controller
         ->join('examen_users', 'examens.id', 'examen_users.examen_id')
         ->join('users', 'examen_users.user_id', 'users.id')
         ->where('examen_users.user_id',auth()->user()->id)
-        ->whereNotNull('fecha_validacion')
+        ->whereNotNull('examen_users.fecha_validacion')
         ->get();
 
         $examen_pendiente = DB::table('materias')
         ->join('temas', 'materias.id', 'temas.materia_id')
         ->join('examens', 'temas.id', 'examens.tema_id')
-        ->select('temas.numero','temas.nombre', 'examens.id', 'examens.niveles', 'examens.numero_preguntas', 'examens.fecha_inicio', 'examens.fecha_final', 'examens.tema_id')
-        ->where('materias.id', auth()->user()->materia_id)
+        ->select('temas.numero','temas.nombre', 'examens.id', 'examens.fecha_inicio', 'examens.fecha_final')
+        ->whereNull('examens.fecha_validacion')
         ->get();
 
         $examen_realizado = DB::table('examens')
         ->join('examen_users', 'examen_users.examen_id', 'examens.id')
         ->select('*')
-        ->where('examen_users.examen_id', 'examens.id')
+        ->whereNotNull('examen_users.fecha_validacion')
         ->get();
 
          return view('home', compact('nombre_nivel', 'nombre_materia','notaExamen', 'examen_pendiente', 'examen_realizado'));

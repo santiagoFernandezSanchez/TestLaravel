@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('numero_preguntas')->nullable();
             $table->dateTime('fecha_inicio');
             $table->dateTime('fecha_final');
+            $table->dateTime('fecha_validacion')->nullable();
             $table->unsignedBigInteger('tema_id');
             $table->timestamps();
 

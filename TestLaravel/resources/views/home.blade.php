@@ -126,7 +126,7 @@
                                 </thead>
                                 <tbody>
 
-                                    <!-- BUCLE PARA MOSTRAR TODAS LAS CALIFICACIONES -->
+                                    <!-- BUCLE PARA MOSTRAR TODOS LOS EXAMENES PENDIENTES -->
 
                                     @foreach($examen_pendiente as $pendiente)
 

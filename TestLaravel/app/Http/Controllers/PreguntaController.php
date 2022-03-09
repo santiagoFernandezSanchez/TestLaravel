@@ -22,6 +22,19 @@ class PreguntaController extends Controller
 
     public function store(Request $request){
 
+        $preguntavalidate = $request->validate([
+
+            'tema_id' => 'required',
+            'nivel' => 'required',
+            'enunciado' => 'required | regex:/^[A-Za-z ]+$/',
+            'respuesta1' => 'required',
+            'respuesta2' => 'required',
+            'respuesta3' => 'required',
+            'respuesta4' => 'required',
+            'correcta' => 'required'
+            
+        ]);
+
         $pregunta = new Pregunta;
 
         $pregunta->tema_id = $request->get('tema_id');

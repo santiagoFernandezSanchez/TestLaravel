@@ -31,6 +31,12 @@
 
                     </select>
 
+                    @if($errors->has('niveles'))
+
+                        <p class="alert alert-danger">Campo obligatorio, seleccione un nivel</p>
+
+                    @endif
+
                 </div>
 
                 <div class="form-group mt-4">
@@ -46,12 +52,24 @@
 
                     </select>
 
+                    @if($errors->has('tema_id'))
+
+                        <p class="alert alert-danger">Campo obligatorio, seleccione un tema</p>
+
+                    @endif
+
                 </div>
 
                 <div class="form-group mt-4">
 
                     <label for="numero_preguntas">Número de preguntas:</label>
                     <input type="number" name="numero_preguntas" id="numero_preguntas" min="10" class="form-control" value="">
+
+                    @if($errors->has('numero_preguntas'))
+
+                        <p class="alert alert-danger">Campo obligatorio, introduza un número de preguntas</p>
+
+                    @endif
 
                 </div>
 
@@ -60,12 +78,24 @@
                     <label for = "fecha_inicio">Fecha inicio del examen:</label>
                     <input type = "datetime-local" name ="fecha_inicio" id = "fecha_inicio">
 
+                    @if($errors->has('fecha_inicio'))
+
+                        <p class="alert alert-danger">Campo obligatorio, seleccione una fecha de inicio para el examen</p>
+
+                    @endif
+
                 </div>
 
                 <div class="form-group mt-4">
 
                     <label for = "fecha_final">Fecha fin del examen:</label>
                     <input type = "datetime-local" name ="fecha_final" id = "fecha_final">
+
+                    @if($errors->has('fecha_final'))
+
+                        <p class="alert alert-danger">Campo obligatorio, seleccione una fecha final para el examen</p>
+
+                    @endif
 
                 </div>
 

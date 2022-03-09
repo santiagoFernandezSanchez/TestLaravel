@@ -65,11 +65,21 @@
                 <div class="form-group">
                     <label for="numero"><h5>Numero del tema</h5></label>
                     <input type="text" name="numero" id="numero" class="form-control" value="{{old('numero')}}">
+                    @if($errors->has('numero')) 
+                    
+                        <p class="alert alert-danger">El número de temas es obligatorio y solo se aceptan números</p>  
+                        
+                    @endif
                 </div>
 
                 <div class="form-group mt-4">
                     <label for="nombre"><h5>Nombre del tema</h5></label>
                     <input type="text" name="nombre" id="nombre" class="form-control" value="{{old('nombre')}}">
+                    @if($errors->has('nombre')) 
+                        
+                        <p class="alert alert-danger">El nombre del tema es obligatorio y solo se aceptan letras y espacio</p>
+                        
+                    @endif
                 </div>
 
                 <button type="submit" class="btn btn-primary mt-4">Añadir tema</button>

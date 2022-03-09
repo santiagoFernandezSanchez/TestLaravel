@@ -41,24 +41,24 @@ Route::get('/home', [HomeController::class, 'index']);
 // PROFESOR //
 
 // Tema
-Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->name('tema.create');
+Route::get('/home/profesor/tema/create', [TemaController::class, 'create'])->name('tema.create')->middleware('auth');
 Route::post('/home/profesor/tema', [TemaController::class,'store'])->name('tema.store');
 
 // Pregunta
-Route::get('/home/profesor/pregunta', [PreguntaController::class, 'index'])->name('pregunta');
+Route::get('/home/profesor/pregunta', [PreguntaController::class, 'index'])->name('pregunta')->middleware('auth');
 Route::post('/home/profesor/pregunta', [PreguntaController::class, 'store'])->name('pregunta.store');
 
 // Examen
-Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('examen');
+Route::get('/home/profesor/examen', [ExamenController::class, 'show'])->name('examen')->middleware('auth');
 Route::post('/home/profesor/examen', [ExamenController::class, 'store'])->name('examen.store');
 
 // Alumno
-Route::get('/home/profesor/alumno', [AlumnoController::class, 'inscrito'])->name('alumno');
+Route::get('/home/profesor/alumno', [AlumnoController::class, 'inscrito'])->name('alumno')->middleware('auth');
 Route::post('/home/profesor/alumno', [AlumnoController::class, 'update'])->name('alumno.update');
 
 
 // ALUMNO realiza examen //
-Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen'])->name('alumno.haceExamen');
+Route::get('home/alumno/hacerExamen/{id}', [ExamenController::class, 'hacerExamen'])->name('alumno.haceExamen')->middleware('auth');
 
 // Examen Corregir //
 Route::post('home/alumno/examenHecho', [ExamenController::class, 'corregirExamen'])->name('corregir');
@@ -67,19 +67,19 @@ Route::post('home/alumno/examenHecho', [ExamenController::class, 'corregirExamen
 // --ADMIN-- //
 
 // Usuarios
-Route::resource('/home/admin/usuarios', AdminUserController::class);
+Route::resource('/home/admin/usuarios', AdminUserController::class)->middleware('auth');
 
 // Temas
-Route::resource('/home/admin/temas', AdminTemaController::class);
+Route::resource('/home/admin/temas', AdminTemaController::class)->middleware('auth');
 
 // Examenes
-Route::resource('/home/admin/examenes', AdminExamenController::class);
+Route::resource('/home/admin/examenes', AdminExamenController::class)->middleware('auth');
 
 // Preguntas
-Route::resource('/home/admin/preguntas', AdminPreguntaController::class);
+Route::resource('/home/admin/preguntas', AdminPreguntaController::class)->middleware('auth');
 
 // Niveles
-Route::resource('/home/admin/niveles', NivelController::class);
+Route::resource('/home/admin/niveles', NivelController::class)->middleware('auth');
 
 // Materias
-Route::resource('/home/admin/materias', MateriaController::class);
+Route::resource('/home/admin/materias', MateriaController::class)->middleware('auth');

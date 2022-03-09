@@ -28,6 +28,16 @@ class ExamenController extends Controller
 
     public function store(Request $request) {
 
+        $examenvalidate = $request->validate([
+
+            'niveles' => 'required',
+            'tema_id' => 'required',
+            'numero_preguntas' => 'required | numeric',
+            'fecha_inicio' => 'required',
+            'fecha_final' => 'required',
+            
+        ]);
+
         $examen = new Examen([
 
             'niveles' => $request->get('niveles'),

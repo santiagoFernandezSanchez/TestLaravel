@@ -36,6 +36,12 @@
 
                 </select>
 
+                @if($errors->has('tema_id')) 
+                
+                    <p class="alert alert-danger">Seleccione un tema, campo obligatorio</p>
+                    
+                @endif
+
             </div>
             <div class="col-3"></div>
         </div>
@@ -55,6 +61,12 @@
 
 
                 </select>
+
+                @if($errors->has('nivel')) 
+                
+                    <p class="alert alert-danger">Seleccione un nivel, campo obligatorio</p>
+                    
+                @endif
 
             </div>
             <div class="col-3"></div>
@@ -80,6 +92,12 @@
                     </div>
                     <input type="text" class="form-control" name = "enunciado">
                 </div>
+
+                @if($errors->has('enunciado')) 
+                
+                    <p class="alert alert-danger">Introduzca una pregunta, campo obligatorio</p>
+                    
+                @endif
             </div>
             <div class="col-3"></div>
         </div>
@@ -105,6 +123,12 @@
                     </div>
                     <input type="text" class="form-control" name="respuesta1">
                 </div>
+
+                @if($errors->has('respuesta1')) 
+                
+                    <p class="alert alert-danger">Introduzca una respuesta candidata, campo obligatorio</p>
+                    
+                @endif
             </div>
             <div class="col-3"></div>
         </div>
@@ -120,6 +144,12 @@
                     </div>
                     <input type="text" class="form-control" name="respuesta2">
                 </div>
+
+                @if($errors->has('enunciado')) 
+                
+                    <p class="alert alert-danger">Introduzca una respuesta candidata, campo obligatorio</p>
+                    
+                @endif
             </div>
             <div class="col-3"></div>
         </div>
@@ -135,6 +165,12 @@
                     </div>
                     <input type="text" class="form-control" name="respuesta3">
                 </div>
+
+                @if($errors->has('enunciado')) 
+                
+                    <p class="alert alert-danger">Introduzca una respuesta candidata, campo obligatorio</p>
+                    
+                @endif
             </div>
             <div class="col-3"></div>
         </div>
@@ -149,6 +185,12 @@
                     </div>
                     <input type="text" class="form-control" name="respuesta4">
                 </div>
+
+                @if($errors->has('enunciado')) 
+                
+                    <p class="alert alert-danger">Introduzca una respuesta candidata, campo obligatorio</p>
+                    
+                @endif
             </div>
             <div class="col-3"></div>
         </div>
@@ -173,6 +215,12 @@
                     </div>
                     <input type="text" class="form-control" name="correcta">
                 </div>
+
+                @if($errors->has('enunciado')) 
+                
+                    <p class="alert alert-danger">Introduzca la respuesta correcta, campo obligatorio</p>
+                    
+                @endif
             </div>
             <div class="col-3"></div>
         </div>

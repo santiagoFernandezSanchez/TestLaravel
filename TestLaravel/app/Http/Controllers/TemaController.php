@@ -27,6 +27,12 @@ class TemaController extends Controller
 
     public function store(Request $request) {
 
+        $temavalidate = $request->validate([
+
+            'numero' => 'required | numeric',
+            'nombre' => 'required | regex:/^[A-Za-z ]+$/'
+        ]);
+
         $tema = new Tema([
 
             'numero' => $request->get('numero'),

@@ -18,7 +18,7 @@ class MateriaController extends Controller
         //
         $materias = Materia::all();
 
-        return view('admin.Materias', compact('materias'));
+        return view('admin.materias', compact('materias'));
     }
 
 
